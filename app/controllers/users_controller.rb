@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       # 登録成功
       flash[:success] = "ユーザー登録完了"
+      redirect_to @user
     else
       # 登録失敗
       render "new"
