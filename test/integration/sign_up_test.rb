@@ -37,6 +37,7 @@ class SignUpTest < ActionDispatch::IntegrationTest
       post users_path, params: {user:{name:"name", email: "example@example.com",
       password: "password", password_confirmation: "password"}}
     end
+    assert_not flash.empty?
   end
-  
+
 end

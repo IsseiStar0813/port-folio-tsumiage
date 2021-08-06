@@ -1,5 +1,6 @@
 <h1>Sign up</h1>
 
+<%= render "shared/error_message" %>
 <%= form_with(model: @user, local: true) do |f| %>
 
   <%= f.label :name %>
@@ -13,6 +14,6 @@
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
-  
+
   <%= f.submit "register"%>
 <% end %>
