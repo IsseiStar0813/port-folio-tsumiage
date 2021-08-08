@@ -37,6 +37,9 @@ class SignUpTest < ActionDispatch::IntegrationTest
       post users_path, params: {user:{name:"name", email: "example@example.com",
       password: "password", password_confirmation: "password"}}
     end
+    follow_redirect!
+    assert_template "users/show"
+    assert logged_in?
     assert_not flash.empty?
   end
 

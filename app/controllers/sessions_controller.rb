@@ -15,4 +15,7 @@ class SessionsController < ApplicationController
       render "sessions/new"
     end
   end
+
+  def destroy
+  end
 end

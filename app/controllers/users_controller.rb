@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # 登録成功
+      log_in(@user)
       flash[:success] = "ユーザー登録完了"
       redirect_to @user
     else
