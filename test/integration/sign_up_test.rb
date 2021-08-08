@@ -26,8 +26,8 @@ class SignUpTest < ActionDispatch::IntegrationTest
     get signup_path
     assert_template "users/new"
     assert_no_difference "User.count" do
-      post users_path, params: {user:{name: "", email: "example@example.com",
-      password: "pass", password_confirmation: "password"}}
+      post users_path, params: {user:{name: "name", email: "example@example.com",
+      password: "passworddd", password_confirmation: "password"}}
     end
     assert_template "users/new"
   end
