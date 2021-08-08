@@ -1,0 +1,15 @@
+<%= form_with(model: @user, local: true) do |f| %>
+
+  <%= f.label :name, "NAME" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email, "EMAIL" %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password, "PASSWORD" %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "PASSWORD CONFIRMATION" %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit, "UPDATE" %>
