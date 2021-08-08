@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show 
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -19,6 +23,18 @@ class UsersController < ApplicationController
 
   def edit 
     @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      # 更新成功
+      flash[:success] = "情報を更新しました"
+      redirect_to @user
+    else
+      # 更新失敗
+      render 'edit'
+    end
   end
 
   private
