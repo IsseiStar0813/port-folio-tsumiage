@@ -40,7 +40,9 @@ class UsersController < ApplicationController
   end
 
   def destroy 
-    
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "ユーザーを削除しました"
   end
 
   # beforeアクション

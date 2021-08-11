@@ -16,4 +16,5 @@
 
 <% end %>
 
-<p><%= link_to("DELETE USER", users_path(@user)) %></P>
+<p><%= link_to("DELETE USER", user_path(@user), method: :delete,
+                data: {confirm: "ユーザーを削除しますか？"}) %></p>
