@@ -7,6 +7,7 @@ class UsersUpdateTest < ActionDispatch::IntegrationTest
   end
 
   test "update with valid information" do
+    log_in_for_test(@user)
     get edit_user_path(@user)
     assert_template "users/edit"
     name = "issei"
@@ -25,6 +26,7 @@ class UsersUpdateTest < ActionDispatch::IntegrationTest
   end
 
   test "update with invalid information" do
+    log_in_for_test(@user)
     get edit_user_path(@user)
     assert_template "users/edit"
     patch user_path(@user), params: { user: { name: "issei",

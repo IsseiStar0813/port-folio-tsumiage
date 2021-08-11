@@ -10,7 +10,24 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  
+  # ログイン中か確認
   def logged_in?
     !session[:user_id].nil?
   end
+
+  # テストユーザーでログイン
+  def log_in_for_test(user)
+    session[:user_id] = user.id
+  end
+end
+
+class ActionDispatch::IntegrationTest
+
+  # テストユーザーとしてログインする
+  def log_in_for_test(user, password: 'password')
+    post login_path, params: { session: { email: user.email,
+                                          password: password } }
+  end
+
 end
