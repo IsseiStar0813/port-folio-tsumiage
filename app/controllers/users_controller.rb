@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
  
   def new
     @user = User.new
@@ -49,6 +50,15 @@ class UsersController < ApplicationController
       unless logged_in?
         flash[:danger] = " ログインしてください"
         redirect_to login_url
+      end
+    end
+
+    # 正しいユーザーか確認
+    def correct_user
+      @user = User.find(params[:id])
+      unless @user == current_user
+        flash[:danger] = "自分以外の情報は確認できません"
+        redirect_to root_url
       end
     end
 
