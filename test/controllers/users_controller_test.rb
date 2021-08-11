@@ -25,6 +25,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
+  test "should redirect destroy when not logged in" do
+    assert_no_difference "User.count" do
+      delete user_path(@user)
+    end
+    assert_not flash.empty?
+    assert_redirected_to login_url
+  end
+
   test "should redirect edit when logged in as wrong user" do
     log_in_for_test(@other_user)
     get edit_user_path(@user)
@@ -39,4 +47,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_redirected_to root_url
   end
+
+  test "should redirect destroy when logged in as wrong user" do
+    log_in_for_test(@other_user)
+    assert_no_difference "User.count" do
+      delete user_path(@user)
+    end
+    assert_not flash.empty?
+    assert_redirected_to root_url
+  end
+
 end

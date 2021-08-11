@@ -32,6 +32,7 @@ class SignUpTest < ActionDispatch::IntegrationTest
     assert_template "users/new"
   end
 
+
   test "valid signup information" do
     assert_difference "User.count", +1 do
       post users_path, params: {user:{name:"name", email: "example@example.com",
