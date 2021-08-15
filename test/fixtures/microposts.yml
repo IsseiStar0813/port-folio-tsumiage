@@ -1,9 +1,14 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+apple:
+  content: "りんごは美味しい"
+  created_at: <%= 10.minutes.ago %>
+  user: issei
 
-one:
-  content: MyText
-  user: one
+pineapple:
+  content: "パイナップルは美味しい"
+  created_at: <%= 1.hours.ago %>
+  user: issei
 
-two:
-  content: MyText
-  user: two
+most_recent:
+  content: "最新の投稿です"
+  created_at: <%= Time.zone.now %>
+  user: issei
