@@ -6,6 +6,11 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     @micropost = microposts(:apple)
   end
 
+  test "should redirect new when not logged in" do
+    get new_micropost_path
+    assert_redirected_to login_url
+  end
+
   test "should redirect create when not logged in" do
     assert_no_difference 'Micropost.count' do
       post microposts_path, params: { micropost: { content: "テスト" } }
