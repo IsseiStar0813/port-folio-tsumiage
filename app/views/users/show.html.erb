@@ -5,5 +5,7 @@
 <ol>
   <% @microposts.each do |micropost| %>
     <li><%= micropost.content %>
+    <%= link_to "delete", micropost, method: :delete,
+                                       data: { confirm: "削除しますか？" } %>
   <% end %>
 </ol>

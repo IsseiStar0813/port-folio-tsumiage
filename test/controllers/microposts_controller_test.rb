@@ -24,4 +24,23 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to login_url
   end
+
+  test "should be deleted" do
+    log_in_for_test(users(:issei))
+    assert_difference "Micropost.count", - 1 do
+      delete micropost_path(@micropost)
+    end
+    assert_not flash.empty?
+    follow_redirect!
+    assert_template "users/show"
+  end
+
+  test "should not be deleted" do
+    log_in_for_test(users(:yuuka))
+    assert_no_difference 'Micropost.count' do
+      delete micropost_path(@micropost)
+    end
+    assert_not flash.empty?
+    assert_redirected_to root_url
+  end
 end

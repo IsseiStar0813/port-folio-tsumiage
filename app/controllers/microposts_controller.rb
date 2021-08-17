@@ -18,6 +18,17 @@ class MicropostsController < ApplicationController
   end
 
   def destroy 
+    @micropost = current_user.microposts.find_by(id: params[:id])
+    unless @micropost.nil?
+      # 削除成功
+      @micropost.destroy
+      flash[:success] = "削除しました"
+      redirect_to current_user
+    else
+      # 削除失敗
+      flash[:warning] = "他人の投稿は削除できません"
+      redirect_to root_url
+    end
   end
 
   private

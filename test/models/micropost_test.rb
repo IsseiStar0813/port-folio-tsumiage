@@ -4,6 +4,7 @@ class MicropostTest < ActiveSupport::TestCase
   
   def setup
     @user = users(:issei)
+    @other = users(:yuuka)
     @micropost = @user.microposts.build(content: "テスト中")
     end
 
@@ -30,5 +31,6 @@ class MicropostTest < ActiveSupport::TestCase
       assert_equal microposts(:most_recent), Micropost.first
     end
 
+    
 
 end
