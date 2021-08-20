@@ -12,13 +12,16 @@
 
   <body>
     <header>
-    <%# トップページとその他のページでヘッダー表示を変更する %>
+    <%# ランディングページとその他のページでヘッダー表示を変更する %>
     <% if request.path == '/' %>
+    <%#ランディングページのヘッダー %>
       <%= render "layouts/root_header" %>
     <% else %>
+    <%#その他のページのヘッダー %>
       <%= render "layouts/header" %>
     <% end %>
     </header>
+    <%#フラッシュメッセージの表示 %>
     <%= render "shared/flash_message" %>
     <%= yield %>
   </body>

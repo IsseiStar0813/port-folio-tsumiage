@@ -7,5 +7,5 @@ class LandingPagesControllerTest < ActionDispatch::IntegrationTest
     assert_template "landing_pages/home"
     assert_template "layouts/_root_header"
   end
-  
+
 end
