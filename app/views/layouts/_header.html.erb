@@ -1,14 +1,13 @@
-<header>
-<h1 class = "title"><%= link_to("TSUMIAGE", root_path) %></h1>
-<ul>
-  <li class = "header-item"><%= link_to("Home", root_path) %>
-  <% if logged_in? %>
-  <li class = "header-item"><%= link_to("Profile", current_user) %>
-  <li class = "header-item"><%= link_to("Posting", new_micropost_path) %>
-  <li class = "header-item"><%= link_to("Settings", edit_user_path(current_user)) %>
-  <li class = "header-item"><%= link_to("Log out", logout_path ,method: :delete) %>
-  <% else %>
-  <li class = "header-item"><%= link_to("Log in", login_path) %>
+ <% if logged_in? %>
+  <%# ユーザーがログイン中の場合 %>
+  <h1 class = "title"><%= link_to("TSUMIAGE", current_user) %></h1>
+  <ul>
+    <li class = "header-item"><%= link_to("Profile", current_user) %>
+    <li class = "header-item"><%= link_to("Posting", new_micropost_path) %>
+    <li class = "header-item"><%= link_to("Settings", edit_user_path(current_user)) %>
+    <li class = "header-item"><%= link_to("Log out", logout_path ,method: :delete) %>
+  </ul>
+ <% else %>
+  <%# ログインしていない場合 %>
+  <h1 class = "title"><%= link_to("TSUMIAGE", root_path) %></h1>
   <% end %>
-</ul>
-</header> 
