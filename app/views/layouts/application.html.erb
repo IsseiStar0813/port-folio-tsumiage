@@ -11,8 +11,15 @@
   </head>
 
   <body>
+ <%# ランディングページとその他のペ-ジで表示されるヘッダーを変更する %>
+  <% if request.path == '/' %>
+ <%# ランディングページ %>
+  <%= render "layouts/root_header" %>
+  <% else %>
+ <%# その他のページ %>
   <%= render "layouts/header" %>
   <%= render "shared/flash_message" %>
+  <% end %>
     <%= yield %>
   </body>
 </html>

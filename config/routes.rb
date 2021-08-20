@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root "static_pages#home"
+  root "landing_pages#home"
   get "/signup", to: "users#new"
   resources :users, :except => :index
   get "/login", to: "sessions#new"
