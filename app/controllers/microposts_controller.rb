@@ -9,6 +9,8 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       # 投稿成功
+      @tsumiage_count = current_user.tsumiage_count + 1
+      current_user.update_attribute(:tsumiage_count, @tsumiage_count)
       flash[:success] = "投稿しました"
       redirect_to current_user
     else

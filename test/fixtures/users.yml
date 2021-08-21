@@ -2,8 +2,10 @@ issei:
   name: isseistar
   email: isseistar@example.com
   password_digest: <%= User.digest('password') %>
+  tsumiage_count: 0
 
 yuuka:
   name: yuuka
   email: yuuka@example.com
   password_digest: <%= User.digest('password') %>
+  tsumiage_count: 0

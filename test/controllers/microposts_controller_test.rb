@@ -3,6 +3,7 @@ require "test_helper"
 class MicropostsControllerTest < ActionDispatch::IntegrationTest
 
   def setup
+    @user = users(:issei)
     @micropost = microposts(:apple)
   end
 
@@ -43,4 +44,15 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_redirected_to root_url
   end
+
+  test "correct posting" do
+    log_in_for_test(@user)
+    assert_difference "Micropost.count", + 1 do
+      post microposts_path, params: { micropost: { content: "テスト" } }
+    end  
+    assert_not flash.empty?
+    follow_redirect!
+    assert_template "users/show"
+  end
+
 end
