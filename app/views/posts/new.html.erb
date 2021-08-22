@@ -1,5 +1,5 @@
 
-<%= form_with(model: @micropost, local: true) do |f| %>
+<%= form_with(model: @post, local: true) do |f| %>
 <%= render "shared/error_message", object: f.object %>
 
   <%= f.text_area :content, placeholder: "今日の積み上げ" %>

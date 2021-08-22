@@ -3,9 +3,9 @@
 <h3><%= @user.tsumiage_count %>日継続</h3>
 
 <ol>
-  <% @microposts.each do |micropost| %>
-    <li><%= micropost.content %>
-    <%= link_to "delete", micropost, method: :delete,
+  <% @posts.each do |post| %>
+    <li><%= post.content %>
+    <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "削除しますか？" } %>
   <% end %>
 </ol>
