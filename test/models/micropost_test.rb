@@ -21,11 +21,6 @@ class MicropostTest < ActiveSupport::TestCase
       @micropost.content = ""
       assert_not @micropost.valid?
     end
-  
-    test "content's maximum number of characters are 140" do
-      @micropost.content = "a" * 141
-      assert_not @micropost.valid?
-    end
 
     test "recent micropost should be ordered first" do
       assert_equal microposts(:most_recent), Micropost.first
