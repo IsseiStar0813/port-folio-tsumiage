@@ -13,14 +13,14 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should redirect create when not logged in" do
-    assert_no_difference 'Post.count' do
+    assert_no_difference "Post.count" do
       post posts_path, params: { post: { content: "テスト" } }
     end
     assert_redirected_to login_url
   end
 
   test "should redirect destroy when not logged in" do
-    assert_no_difference 'Post.count' do
+    assert_no_difference "Post.count" do
       delete post_path(@post)
     end
     assert_redirected_to login_url
@@ -49,10 +49,21 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     log_in_for_test(@user)
     assert_difference "Post.count", + 1 do
       post posts_path, params: { post: { content: "テスト" } }
-    end  
+    end 
     assert_not flash.empty?
     follow_redirect!
     assert_template "users/show"
   end
+
+  test "post once a day" do
+    log_in_for_test(@user)
+    @user.update_attribute(:already_posted, true)
+    assert_no_difference "Post.count" do
+      post posts_path, params: { post: { content: "テスト" } }
+    end
+    assert_not flash.empty?
+    follow_redirect!
+    assert_template "users/show"
+   end
 
 end
