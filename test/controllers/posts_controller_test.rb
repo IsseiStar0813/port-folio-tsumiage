@@ -55,15 +55,4 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_template "users/show"
   end
 
-  test "post once a day" do
-    log_in_for_test(@user)
-    @user.update_attribute(:already_posted, true)
-    assert_no_difference "Post.count" do
-      post posts_path, params: { post: { content: "テスト" } }
-    end
-    assert_not flash.empty?
-    follow_redirect!
-    assert_template "users/show"
-   end
-
 end

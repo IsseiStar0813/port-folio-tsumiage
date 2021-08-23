@@ -10,6 +10,7 @@ gem 'bcrypt',         '3.1.13'
 gem 'rails-controller-testing'
 gem 'rails-i18n'
 gem 'jquery-rails'
+gem 'whenever', require: false
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server

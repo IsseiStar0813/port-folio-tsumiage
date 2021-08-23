@@ -1,6 +1,5 @@
 class PostsController < ApplicationController 
   before_action :logged_in_user, only: [:new, :create, :destroy]
-  before_action :already_posted?, only: :create
 
   def new
     @post = current_user.posts.build 
@@ -10,8 +9,11 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       # 投稿成功
+      unless current_user.already_posted
+          # その日の最初の投稿の場合のみ行う処理
       @tsumiage_count = current_user.tsumiage_count + 1
       current_user.update(tsumiage_count: @tsumiage_count, already_posted: true)
+      end
       flash[:success] = "投稿しました"
       redirect_to current_user
     else
@@ -34,15 +36,6 @@ class PostsController < ApplicationController
     end
   end
  
-  # すでに投稿済みかどうか
-  def already_posted?
-    if current_user.already_posted
-      # ユーザーが既に投稿済みの場合
-      flash[:warning] = "投稿は一日一回です"
-      redirect_to current_user
-    end
-  end
-
   private
     def post_params
       params.require(:post).permit(:content)
