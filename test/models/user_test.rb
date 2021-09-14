@@ -3,8 +3,7 @@ require "test_helper"
 class UserTest < ActiveSupport::TestCase
   
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com", 
-      password: "foobar", password_confirmation: "foobar")
+    @user = users(:issei)
   end
 
   test "should be valid" do
@@ -49,12 +48,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "associated posts should be destroyed" do
-    @user.save
-    @post = @user.posts.create(content: "テスト中")
-    assert_difference 'Post.count', -1 do
+    assert_difference 'Post.count', -3 do
       @user.destroy
     end
   end
+
+  
 
 
 end
