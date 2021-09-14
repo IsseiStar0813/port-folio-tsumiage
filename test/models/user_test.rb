@@ -53,7 +53,11 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  
+  test "user should be unposted" do
+    make_user_unposted_for_test
+    @other = users(:yuuka)
+   assert_equal @other.already_posted, false
+  end
 
 
 end

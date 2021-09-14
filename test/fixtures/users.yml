@@ -10,4 +10,4 @@ yuuka:
   email: yuuka@example.com
   password_digest: <%= User.digest('password') %>
   tsumiage_count: 0
-  already_posted: false
+  already_posted: true

@@ -22,6 +22,14 @@ class ActiveSupport::TestCase
   end
 end
 
+# 全ユーザーのalready_postedをfalse(未投稿の状態)にする
+def make_user_unposted_for_test
+  users = User.all
+  users.each do |user|
+    user.update_attribute(:already_posted, false)
+  end
+end
+
 class ActionDispatch::IntegrationTest
 
   # テストユーザーとしてログインする
@@ -29,5 +37,7 @@ class ActionDispatch::IntegrationTest
     post login_path, params: { session: { email: user.email,
                                           password: password } }
   end
+
+
 
 end
