@@ -12,11 +12,19 @@ class User < ApplicationRecord
     
 
     
-    # 渡された文字列のハッシュ値を返す
+  # 渡された文字列のハッシュ値を返す
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  # 全ユーザーのalready_postedをfalse(未投稿の状態)にする
+  def make_it_unposted
+    users = User.all
+    users.each do |user|
+      user.update_attribute(:already_posted, false)
+    end
   end
 
 end

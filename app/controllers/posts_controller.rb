@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     if @post.save
       # 投稿成功
       unless current_user.already_posted
-          # その日の最初の投稿の場合のみ行う処理
+          # その日の最初の投稿の場合のみ積み上げをカウント
       @tsumiage_count = current_user.tsumiage_count + 1
       current_user.update(tsumiage_count: @tsumiage_count, already_posted: true)
       end
