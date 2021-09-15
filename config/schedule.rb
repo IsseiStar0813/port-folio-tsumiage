@@ -1,5 +1,13 @@
-set :output, "/path/to/my/cron_log.log"
+require File.expand_path(File.dirname(__FILE__) + "/environment")
 
-every :day, at: "0:00 am" do
+rails_env = ENV['RAILS_ENV'] || :development
+
+set :environment, rails_env
+
+
+set :output, "#{Rails.root}/log/cron.log"
+
+
+every 1.day do
   runner "UserModel.make_user_unposted"
 end
