@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'calender/calender'
   root "landing_pages#home"
   get "/signup", to: "users#new"
   resources :users, :except => :index
