@@ -20,7 +20,7 @@ class User < ApplicationRecord
   end
 
   # 全ユーザーのalready_postedをfalse(未投稿の状態)にする
-  def make_user_unposted
+  def self.make_user_unposted
     users = User.all
     users.each do |user|
       user.update_attribute(:already_posted, false)

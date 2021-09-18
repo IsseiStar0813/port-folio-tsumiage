@@ -1,4 +1,5 @@
 class CalendersController < ApplicationController
-  def calender
+  def index
+    @calenders = Calender.all
   end
 end
