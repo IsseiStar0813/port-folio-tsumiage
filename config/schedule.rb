@@ -9,5 +9,5 @@ set :output, "#{Rails.root}/log/cron.log"
 
 
 every 1.day do
-  runner "UserModel.make_user_unposted"
+  runner "User.make_user_unposted"
 end
