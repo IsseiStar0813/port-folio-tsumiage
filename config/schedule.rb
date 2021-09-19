@@ -8,6 +8,6 @@ set :environment, rails_env
 set :output, "#{Rails.root}/log/cron.log"
 
 
-every 1.day do
+every 1.day, :at => "0:00 am" do
   runner "User.make_user_unposted"
 end
