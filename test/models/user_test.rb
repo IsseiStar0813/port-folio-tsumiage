@@ -56,7 +56,11 @@ class UserTest < ActiveSupport::TestCase
   test "user should be unposted" do
     make_user_unposted_for_test
     @other = users(:yuuka)
-   assert_equal @other.already_posted, false
+    assert_equal @other.already_posted, false
+  end
+
+  test "authenticated? should return false with nil digest" do
+    assert_not @user.authenticated?('')
   end
 
 
