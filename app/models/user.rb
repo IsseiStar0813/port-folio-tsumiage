@@ -25,9 +25,14 @@ class User < ApplicationRecord
   end
 
   # 作成したトークンをデータベースに保存
-  def remember
+  def remember_db
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  # 渡されたトークンとダイジェストが一致するか検証
+  def authenticated?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
   # 全ユーザーのalready_postedをfalse(未投稿の状態)にする
