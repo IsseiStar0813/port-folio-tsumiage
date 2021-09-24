@@ -17,22 +17,33 @@ module SessionsHelper
       end
     end
   end
-  
+
+  # 永続セッションにユーザーを登録
+  def remember(user)
+    user.remember_db
+    cookies.permanent.signed[:user_id] = user.id
+    cookies.permanent[:remember_token] = user.remember_token
+  end
+
   # ユーザーがログイン中かどうか判断する
   def logged_in?
     !current_user.nil?
   end
 
-  # ログアウトする
-  def log_out
-    session.delete(:user_id)
+  # 永続的セッションを破棄する
+  def forget(user)
+    user.forget_db
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
   end
 
-  # 永続セッションにユーザーを登録
-  def remember_cookie(user)
-    user.remember
-    cookies.permanent.signed[:user_id] = user.id
-    cookies.permanent[:remember_token] = user.remember_token
+  # 現在のユーザーをログアウトする
+  def log_out
+    forget(current_user)
+    session.delete(:user_id)
+    @current_user = nil
   end
+
+  
 
 end

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  attr_accessor :remember_token
   has_many :posts, dependent: :destroy
 
     validates :name, presence: :true, length: {maximum: 50}
@@ -35,7 +35,12 @@ class User < ApplicationRecord
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
-  # 全ユーザーのalready_postedをfalse(未投稿の状態)にする
+  # ユーザーの記憶ダイジェストをデータベースから削除
+  def forget_db
+    update_attribute(:remember_digest, nil)
+  end
+
+  # 全ユーザー未投稿状態にする
   def self.make_user_unposted
     users = User.all
     users.each do |user|
