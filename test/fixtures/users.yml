@@ -4,6 +4,8 @@ issei:
   password_digest: <%= User.digest('password') %>
   tsumiage_count: 0
   already_posted: false
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 yuuka:
   name: yuuka
@@ -11,3 +13,5 @@ yuuka:
   password_digest: <%= User.digest('password') %>
   tsumiage_count: 0
   already_posted: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
