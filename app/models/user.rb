@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
+  before_save :downcase_email
   has_many :posts, dependent: :destroy
 
     validates :name, presence: :true, length: {maximum: 50}
@@ -11,6 +12,10 @@ class User < ApplicationRecord
     
     
 
+  # メールアドレスをすべて小文字にする
+  def downcase_email
+    self.email = email.downcase
+  end
     
   # 渡された文字列のハッシュ値を返す
   def self.digest(string)

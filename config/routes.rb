@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
   resources :posts, only: [:new, :create, :destroy]
   get "/calender", to: "calenders#index"
+  resources :account_activations, only: [:edit]
 end
