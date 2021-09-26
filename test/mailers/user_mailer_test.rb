@@ -9,7 +9,6 @@ class UserMailerTest < ActionMailer::TestCase
     assert_equal "Account activation", mail.subject
     assert_equal [user.email], mail.to
     assert_equal ["noreply@example.com"], mail.from
-    
   end
 
 end
