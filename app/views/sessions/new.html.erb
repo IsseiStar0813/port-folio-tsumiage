@@ -9,7 +9,11 @@
   <%= f.password_field :password %>
   
   <%= f.submit "Log in" %>
-<% end %> 
+<% end %>
+
+<p>パスワードを忘れましたか?</p>
+<%= link_to("Password Reset", password_resets_new_path) %>
 
 <p>ユーザー登録はまだですか？</p>
 <%= link_to("Sign up", signup_path) %>
+
