@@ -66,6 +66,11 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
 
+  # パスワード再設定の期限が切れている場合(30分以上経過している場合)はtrueを返す
+  def password_reset_expired?
+    reset_sent_at < 30.minutes.ago
+  end
+
 
 
   # 全ユーザー未投稿状態にする
