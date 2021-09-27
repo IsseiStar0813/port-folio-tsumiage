@@ -1,4 +1,5 @@
 class PasswordResetsController < ApplicationController
+  before_action :valid_user?, only[:edit, :update]
   
   def new
   end
@@ -17,11 +18,20 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    
+  end
+
+  private
+
+  # 正しいユーザーかどうか確認する
+  def valid_user
     @user = User.find_by(email: params[:email])
     unless (@user && @user.activated? &&
             @user.authenticated?(:reset, params[:id]))
       redirect_to root_url
-      flash[:warning] = "不正なアクセスです"
     end
   end
 
