@@ -66,10 +66,10 @@ class SignUpTest < ActionDispatch::IntegrationTest
     assert_equal 1, ActionMailer::Base.deliveries.size
     user = assigns(:user)
     assert_not user.activated?
-    # 有効化していない状態でログインしてみる
+    # 有効化されていない状態でログイン
     log_in_for_test(user)
     assert_not logged_in?
-    # 有効化トークンが不正な場合
+    # 有効化トークンが正しくない
     get edit_account_activation_path("invalid token", email: user.email)
     assert_not logged_in?
     # トークンは正しいがメールアドレスが無効な場合

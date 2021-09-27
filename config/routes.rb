@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'password_resets/new'
+  get 'password_resets/edit'
   get 'calender/calender'
   root "landing_pages#home"
   get "/signup", to: "users#new"
