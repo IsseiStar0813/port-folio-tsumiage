@@ -49,13 +49,13 @@ class PasswordResetsControllerTest < ActionDispatch::IntegrationTest
           params: { email: user.email,
                     user: { password:              "foobaz",
                             password_confirmation: "barquux" } }
-    assert_template "shared/_error_message"
+    assert_select "div.errors"
     # パスワードが空
     patch password_reset_path(user.reset_token),
           params: { email: user.email,
                     user: { password:              "",
                             password_confirmation: "" } }
-    assert_template "shared/_error_message"                 
+    assert_select "div.errors"                 
     # 有効なパスワードとパスワード確認
     patch password_reset_path(user.reset_token),
           params: { email: user.email,
