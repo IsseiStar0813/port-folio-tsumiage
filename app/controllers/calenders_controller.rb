@@ -1,5 +1,6 @@
 class CalendersController < ApplicationController
   def index
-    @calenders = Calender.all
+    @user = current_user
+    @calenders = @user.calenders
   end
 end

@@ -1,9 +1,4 @@
-<%= calendar(calender: @calenders) do |date,calenders| %>
+<%= calendar(calender: @calenders) do |date,event| %>
   <%= date %>
-
-  <% calenders.each do |calender| %>
-    <div>
-      <%= calender.posted %>
-    </div>
-    <% end %>
+  
 <% end %>
