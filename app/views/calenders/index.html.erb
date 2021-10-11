@@ -1,3 +1,9 @@
-<%= month_calendar posts: @posts do |date| %>
-  <%= date %>
+<%= month_calendar events: @posts do |date,events| %>
+  <%= date.day %>
+
+   <% events.each do |event| %>
+    <div>
+      <%= event.content %>
+    </div>
+  <% end %>
 <% end %>
