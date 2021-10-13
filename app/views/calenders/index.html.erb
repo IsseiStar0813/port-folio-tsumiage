@@ -3,7 +3,9 @@
 
    <% events.each do |event| %>
     <div>
-      <%= event.content %>
+      <% if event.content %>
+        積
+      <% end %>
     </div>
   <% end %>
 <% end %>
