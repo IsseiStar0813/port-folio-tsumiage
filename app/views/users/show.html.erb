@@ -1,6 +1,7 @@
 <h1>Profile</h1>
 <h2><%= @user.name %></h2>
-<h3><%= @user.tsumiage_count %>Tsumiage</h3>
+<h3><%= @user.tsumiage_count %>日継続</h3>
+<h3><%= @user.posts.count %>積み上げ</h3>
 
 <ol>
   <% @posts.each do |post| %>
