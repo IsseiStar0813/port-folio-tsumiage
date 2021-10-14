@@ -3,9 +3,11 @@
 
 <%= render "shared/error_message", object: f.object %>
 
-  <%= f.text_area :title, "Title" %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title %>
 
-  <%= f.text_area :content, placeholder: "今日の積み上げ" %>
+  <%= f.label :content, "Content" %>
+  <%= f.text_area :content %>
 
   <%= f.hidden_field :start_time, :value => Date.today %>
 
