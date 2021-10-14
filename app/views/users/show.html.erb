@@ -4,6 +4,7 @@
 
 <ol>
   <% @posts.each do |post| %>
+    <li><%= post.title %>
     <li><%= post.content %>
     <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "削除しますか？" } %>
