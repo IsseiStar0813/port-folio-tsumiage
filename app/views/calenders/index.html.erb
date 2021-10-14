@@ -1,11 +1,11 @@
 <%= month_calendar events: @posts do |date,events| %>
   <%= date.day %>
 
-   <% events.each do |event| %>
+  
     <div>
-      <% if event.content %>
+      <% if !events.empty? %>
         積
       <% end %>
     </div>
-  <% end %>
+  
 <% end %>
