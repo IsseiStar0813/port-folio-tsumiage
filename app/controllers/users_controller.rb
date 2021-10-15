@@ -48,6 +48,8 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
 
+  
+
   # beforeアクション
 
     # 正しいユーザーか確認

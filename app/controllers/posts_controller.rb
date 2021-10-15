@@ -36,6 +36,13 @@ class PostsController < ApplicationController
     end
   end
 
+  # 検索機能
+  def search
+    @search_posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+   end
+
   
  
   private
