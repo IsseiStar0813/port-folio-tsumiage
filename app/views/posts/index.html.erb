@@ -8,7 +8,7 @@
 <% if @search_posts %>
 <div class="post-list">
   <% @search_posts.each do |post| %>
-    <%= post.title %>
+    <h2><%= post.title %></h2>
     <%= post.content %>
   <% end %>
 </div>

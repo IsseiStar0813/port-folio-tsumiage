@@ -3,14 +3,13 @@
 <h3><%= @user.tsumiage_count %>日継続</h3>
 <h3><%= @user.posts.count %>積み上げ</h3>
 
-<ol>
   <% @posts.each do |post| %>
-    <li><%= post.title %>
-    <li><%= post.content %>
+    <h2><%= post.title %></h2>
+    <%= post.content %>
     <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "削除しますか？" } %>
   <% end %>
-</ol>
+
 
 
 
