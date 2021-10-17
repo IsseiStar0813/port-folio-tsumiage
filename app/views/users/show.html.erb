@@ -18,12 +18,13 @@
 
   <%= render "layouts/calender" %>
 
-  <div>
-    <% @posts.each do |post| %>
-      <h2><%= post.title %></h2>
-      <%= post.content %>
-      <%= link_to "delete", post, method: :delete,
-                                        data: { confirm: "削除しますか？" } %>
+  <div class = "latestPosts">
+
+  <h1>最近の投稿</h1>
+    <% @posts.first(8).each do |post| %>
+
+      <p> <%= link_to(post.title, "#") %> </p> 
+  
     <% end %>
   </div>
 

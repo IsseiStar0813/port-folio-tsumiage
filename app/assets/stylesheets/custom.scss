@@ -17,13 +17,15 @@ header {
   padding: 10px;
 }
 
+/* home page */
+
 /* profile */
 
 .profile{
   padding-left: 100px;
   padding-right: 100px;
   margin-top: 50px;
-  margin-left:50px;
+  margin-left:140px;
   display:inline-block;
   background-color: #D5EEF2;
 }
@@ -43,6 +45,19 @@ header {
   margin-right: 50px;
   width: 27%;
   p {
+    font-size: 20px;
+  }
+}
+
+/* posts */
+
+.latestPosts{
+  margin-top: 50px;
+  margin-left:180px;
+  h1{
+    font-size: 25px;
+  }
+  p{
     font-size: 20px;
   }
 }
