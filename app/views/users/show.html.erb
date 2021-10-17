@@ -1,15 +1,27 @@
-<h1>Profile</h1>
-<h2><%= @user.name %></h2>
-<h3><%= @user.tsumiage_count %>日継続</h3>
-<h3><%= @user.posts.count %>積み上げ</h3>
+<div class = "profile">
 
+  <div class = "profile-item">
+    <p><%= @user.name %></p>
+  </div>
+
+  <div class = "profile-item">
+    <p><%= @user.posts.count %>積み上げ</p>
+  </div>
+
+  <div class = "profile-item">
+    <p><%= @user.tsumiage_count %>日継続</p>
+  </div>
+
+</div>
+
+<div>
   <% @posts.each do |post| %>
     <h2><%= post.title %></h2>
     <%= post.content %>
     <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "削除しますか？" } %>
   <% end %>
-
+</div>
 
 
 

@@ -12,6 +12,7 @@ gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'whenever', require: false
 gem "simple_calendar", "~> 2.4"
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
