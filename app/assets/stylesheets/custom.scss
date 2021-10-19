@@ -54,12 +54,19 @@ header {
 /* posts */
 
 .latestPosts{
-  margin-top: 50px;
-  margin-left:180px;
+  display:inline-block;
+  margin-top: 0;
+  margin-right:280px;
   h1{
     font-size: 25px;
   }
   p{
     font-size: 20px;
   }
+}
+
+.buttonTsumiage{
+  display:inline-block;
+  width:200px;
+  height:100px;
 }
