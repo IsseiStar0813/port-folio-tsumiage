@@ -18,11 +18,9 @@
 
   <%= render "layouts/calender" %>
 
-  <div>
-    <button class = "buttonTsumiage"><%= link_to("積み上げる", "#") %></button>
-  </div>
+  
 
-  <div class = "latestPosts">
+  <div class = "latest-posts">
 
   <h1>最近の投稿</h1>
     <% @posts.first(8).each do |post| %>
@@ -31,6 +29,7 @@
   
     <% end %>
   </div>
+  
 
 </div>
 

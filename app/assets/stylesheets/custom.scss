@@ -27,10 +27,11 @@ header {
   padding-left: 100px;
   padding-right: 100px;
   margin-top: 50px;
-  margin-left:140px;
+  margin-left:170px;
   display:inline-block;
   background-color: #D5EEF2;
 }
+
 
 .profile-item{
   display: inline-block;
@@ -43,8 +44,8 @@ header {
 .calender{
   display: inline-block;
   float: right;
-  margin-top: 35px;
-  margin-right: 50px;
+  margin-top: 60px;
+  margin-right: 150px;
   width: 27%;
   p {
     font-size: 20px;
@@ -53,10 +54,10 @@ header {
 
 /* posts */
 
-.latestPosts{
+.latest-posts{
   display:inline-block;
+  margin-left: 300px;
   margin-top: 0;
-  margin-right:280px;
   h1{
     font-size: 25px;
   }
@@ -65,8 +66,3 @@ header {
   }
 }
 
-.buttonTsumiage{
-  display:inline-block;
-  width:200px;
-  height:100px;
-}
