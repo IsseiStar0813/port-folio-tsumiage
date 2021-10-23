@@ -17,7 +17,7 @@
   </div>
 
   <div class = "calender">
-      <p>学習カレンダー</p>
+      <h1>学習カレンダー</h1>
         <%= month_calendar events: @posts do |date,events| %>
           <%= date.day %>
 
@@ -33,7 +33,9 @@
   <div class = "home-body">
 
     <div>
-      <button class = "post-button"><%= link_to("積み上げる", new_post_path) %>
+      <%= link_to new_post_path do %>
+        <button class = "tsumiage-button">積み上げ</button>
+      <% end %>
     </div>
 
     <div class = "latest-posts">
