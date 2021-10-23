@@ -3,33 +3,50 @@
   <div class = "profile">
 
     <div class = "profile-item">
-      <p><%= @user.name %></p>
+        <p><%= @user.name %></p>
     </div>
 
     <div class = "profile-item">
-      <p><%= @user.posts.count %>積み上げ</p>
+        <p><%= @user.posts.count %>積み上げ</p>
     </div>
 
     <div class = "profile-item">
-      <p><%= @user.tsumiage_count %>日継続</p>
+        <p><%= @user.tsumiage_count %>日継続</p>
     </div>
 
   </div>
 
-  <%= render "layouts/calender" %>
+  <div class = "calender">
+      <p>学習カレンダー</p>
+        <%= month_calendar events: @posts do |date,events| %>
+          <%= date.day %>
 
+            <div>
+            <% if !events.empty? %>
+                積
+              <% end %>
+            </div>
+        
+        <% end %>
+    </div>
+
+  <div class = "home-body">
+
+    <div>
+      <button class = "post-button"><%= link_to("積み上げる", new_post_path) %>
+    </div>
+
+    <div class = "latest-posts">
+      <h1>最近の投稿</h1>
+        <% @posts.first(8).each do |post| %>
+          <p> <%= link_to(post.title, "#") %> </p> 
+        <% end %>
+    </div>
+
+    
+    
   
-
-  <div class = "latest-posts">
-
-  <h1>最近の投稿</h1>
-    <% @posts.first(8).each do |post| %>
-
-      <p> <%= link_to(post.title, "#") %> </p> 
-  
-    <% end %>
   </div>
-  
 
 </div>
 

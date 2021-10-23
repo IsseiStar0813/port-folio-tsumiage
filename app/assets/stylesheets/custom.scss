@@ -24,40 +24,50 @@ header {
 /* profile */
 
 .profile{
-  padding-left: 100px;
-  padding-right: 100px;
-  margin-top: 50px;
-  margin-left:170px;
-  display:inline-block;
+  padding: 0 80px;
+  margin: 50px 100px 50px 150px;
   background-color: #D5EEF2;
+  display: inline-block;
 }
 
 
 .profile-item{
   display: inline-block;
   font-size: 30px;
-  padding:10px;
+  padding:5px 25px;
 }
 
 /* calender */
 
 .calender{
-  display: inline-block;
   float: right;
-  margin-top: 60px;
-  margin-right: 150px;
+  margin: 50px 50px;
   width: 27%;
   p {
-    font-size: 20px;
+    font-size:25px;
   }
+  
+}
+
+
+
+/* body */
+
+.home-body{
+  display:flex;
+}
+
+/* button */
+
+.post-button{
+  margin: 10px 150px auto 230px;
+  height: 150px;
+  width: 150px;
 }
 
 /* posts */
 
 .latest-posts{
-  display:inline-block;
-  margin-left: 300px;
-  margin-top: 0;
   h1{
     font-size: 25px;
   }
@@ -65,4 +75,9 @@ header {
     font-size: 20px;
   }
 }
+
+
+
+
+
 
