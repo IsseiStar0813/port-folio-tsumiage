@@ -60,9 +60,11 @@ header {
 /* button */
 
 .tsumiage-button{
-  margin: 10px 150px auto 230px;
-  height: 150px;
-  width: 150px;
+  button{
+    margin: 10px 150px auto 230px;
+    height: 150px;
+    width: 150px;
+  }
 }
 
 /* posts */
