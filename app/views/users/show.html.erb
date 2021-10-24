@@ -41,7 +41,7 @@
     <div class = "latest-posts">
       <h1>最近の投稿</h1>
         <% @posts.first(8).each do |post| %>
-          <p> <%= link_to(post.title, "#") %> </p> 
+          <p> <%= link_to(post.title, post_path(post.id)) %> </p> 
         <% end %>
     </div>
 
