@@ -2,18 +2,21 @@
 
   <div class = "post-detail">
 
-    <div class = "detail-item">
-      <h1><%= @post.title %></h1>
-    </div>
+   
+    <h1><%= @post.title %></h1>
+       
+    <p><%= @post.content %></p>
+    
+    <p><%= @post.created_at %></p>
 
-    <div class = "detail-item">
-      <p><%= @post.content %></p>
-    </div>
+    <p><%= link_to("編集", "#") %></p>
 
-    <div class = "detail-item">
-      <p><%= @post.created_at %></p>
-    </div>
+    <P><%= link_to("削除", post_path, method: :delete,
+                                       data: { confirm: "削除しますか?" } ) %>
+    
+
+
 
   </div>
-  
+
 </div>
