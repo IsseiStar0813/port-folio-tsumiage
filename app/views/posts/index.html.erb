@@ -10,8 +10,7 @@
 <% if @search_posts %>
 <div class="post-list">
   <% @search_posts.each do |post| %>
-    <h2><%= post.title %></h2>
-    <%= post.content %>
+    <p><%= link_to(post.title, post_path(post.id)) %></p>
   <% end %>
 </div>
 <% end %>
