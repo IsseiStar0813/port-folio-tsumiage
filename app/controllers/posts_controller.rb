@@ -26,6 +26,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.find_by(id: params[:id])
   end
 
+  def edit
+    @post = current_user.posts.find_by(id: params[:id])
+  end
+
   def destroy 
     @post = current_user.posts.find_by(id: params[:id])
     unless @post.nil?
@@ -44,7 +48,6 @@ class PostsController < ApplicationController
   def search
     @search_posts = Post.search(params[:keyword])
     @keyword = params[:keyword]
-    render "index"
    end
 
   
