@@ -1,14 +1,13 @@
-<div>
+
   <%= form_with(model: @post, local: true) do |f| %>
   <%= render "shared/error_message", object: f.object%>
 
-    <%= f.label :title, "Title" %>
-    <%= f.text_field :title %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title %>
 
-    <%= f.label :content, "Content" %>
-    <%= f.text_area :content %>
+  <%= f.label :content, "Content" %>
+  <%= f.text_area :content %>
 
-    <%= f.submit "Update" %>
+  <%= f.submit "Update" %>
 
   <% end %>
-</div>
