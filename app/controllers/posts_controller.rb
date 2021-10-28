@@ -30,6 +30,18 @@ class PostsController < ApplicationController
     @post = current_user.posts.find_by(id: params[:id])
   end
 
+  def update
+    @post = current_user.posts.find_by(id: params[:id])
+    if @post.update(post_params)
+      # 更新成功
+      flash[:success] = "投稿を更新しました"
+      redirect_to @post
+    else
+      # 更新失敗
+      render 'edit'
+    end
+  end
+
   def destroy 
     @post = current_user.posts.find_by(id: params[:id])
     unless @post.nil?
