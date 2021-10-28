@@ -26,6 +26,16 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
+  test "should redirect edit when not logged in" do
+    get edit_post_path(@post)
+    assert_redirected_to login_url
+  end
+
+  test "should redirect update when not loggen_in" do
+    patch post_path(@post)
+    assert_redirected_to logon_url
+  end
+
   test "should be deleted" do
     log_in_for_test(users(:issei))
     assert_difference "Post.count", - 1 do

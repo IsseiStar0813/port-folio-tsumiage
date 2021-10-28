@@ -1,5 +1,5 @@
 class PostsController < ApplicationController 
-  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :destroy, :edit, :update]
 
   def new
     @post = current_user.posts.build 
@@ -61,8 +61,6 @@ class PostsController < ApplicationController
     @search_posts = Post.search(params[:keyword])
     @keyword = params[:keyword]
   end
-
-  
 
   private
     def post_params
