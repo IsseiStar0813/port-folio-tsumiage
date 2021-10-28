@@ -32,7 +32,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should redirect update when not loggen_in" do
-    patch post_path(@post), params: {content: "りんご" }
+    patch post_path(@post), params: {post: {content: "りんご" }}
     assert_redirected_to login_url
   end
 
@@ -63,6 +63,15 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     follow_redirect!
     assert_template "users/show"
+  end
+
+  test "post should be updated" do
+    log_in_for_test(@user)
+    patch post_path(@post), params: { post: {content: "テスト" } }
+    assert_not flash.empty?
+    @post.reload
+    assert_equal @post.content, "テスト"
+    assert_redirected_to @post
   end
 
 end
