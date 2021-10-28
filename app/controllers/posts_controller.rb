@@ -48,10 +48,10 @@ class PostsController < ApplicationController
   def search
     @search_posts = Post.search(params[:keyword])
     @keyword = params[:keyword]
-   end
+  end
 
   
- 
+
   private
     def post_params
       params.require(:post).permit(:content, :start_time, :title)
