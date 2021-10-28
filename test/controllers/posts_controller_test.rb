@@ -32,8 +32,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should redirect update when not loggen_in" do
-    patch post_path(@post)
-    assert_redirected_to logon_url
+    patch post_path(@post), params: {content: "りんご" }
+    assert_redirected_to login_url
   end
 
   test "should be deleted" do
