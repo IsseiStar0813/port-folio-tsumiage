@@ -3,19 +3,14 @@
   <div>
     <%= render "shared/error_message", object: f.object%>
 
-    <div>
       <%= f.label :title, "Title" %>
       <%= f.text_field :title %>
-    </div>
-
-    <div>
+    
       <%= f.label :content, "Content" %>
       <%= f.text_area :content %>
-    </div>
-
-    <div>
+    
       <%= f.submit "Update" %>
-    </div>
+    
   </div>
 
   <% end %>

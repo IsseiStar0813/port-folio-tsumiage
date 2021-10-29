@@ -58,7 +58,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test "correct posting" do
     log_in_for_test(@user)
     assert_difference "Post.count", + 1 do
-      post posts_path, params: { post: { content: "テスト" } }
+      post posts_path, params: { post: { title: "テスト",
+                                content: "テスト" } }
     end 
     assert_not flash.empty?
     follow_redirect!

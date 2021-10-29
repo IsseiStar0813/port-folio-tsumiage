@@ -11,7 +11,8 @@ class PostingTest < ActionDispatch::IntegrationTest
     get new_post_path
     assert_template "posts/new"
     assert_difference "Post.count", + 1 do
-      post posts_path, params: {post:{content: "テスト中"}}
+      post posts_path, params: {post:{title: "テスト", 
+                                content: "テスト中"}}
     end
     assert_not flash.empty?
     follow_redirect!

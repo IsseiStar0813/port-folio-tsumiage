@@ -5,7 +5,7 @@ class PostTest < ActiveSupport::TestCase
   def setup
     @user = users(:issei)
     @other = users(:yuuka)
-    @post = @user.posts.build(content: "テスト中")
+    @post = @user.posts.build(content: "テスト中", title: "テスト")
     end
 
     test "should be valid" do
@@ -19,6 +19,11 @@ class PostTest < ActiveSupport::TestCase
   
     test "content should be present" do
       @post.content = ""
+      assert_not @post.valid?
+    end
+
+    test "title should be present" do
+      @post.title = ""
       assert_not @post.valid?
     end
 

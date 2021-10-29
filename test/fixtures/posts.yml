@@ -1,14 +1,17 @@
 apple:
+  title: "りんご"
   content: "りんごは美味しい"
   created_at: <%= 10.minutes.ago %>
   user: issei
 
 pineapple:
+  title: "パイナップル"
   content: "パイナップルは美味しい"
   created_at: <%= 1.hours.ago %>
   user: issei
 
 most_recent:
+  title: "最新の投稿"
   content: "最新の投稿です"
   created_at: <%= Time.zone.now %>
   user: issei
