@@ -1,17 +1,25 @@
-<div>
-  <%= form_with(model: @post, local: true) do |f| %>
-  <div>
-    <%= render "shared/error_message", object: f.object%>
+<div class = "container">
 
-      <%= f.label :title, "Title" %>
-      <%= f.text_field :title %>
-    
-      <%= f.label :content, "Content" %>
-      <%= f.text_area :content %>
-    
-      <%= f.submit "Update" %>
-    
+  <div class = "new-post">
+
+    <%= form_with(model: @post, local: true) do |f| %>
+    <%= render "shared/error_message", object: f.object %>
+
+        <div class = "title-field">
+          <%= f.text_field :title %>
+        </div>
+
+        <div class = "content-field">
+          <%= f.text_area :content %>
+        </div>
+
+        <div class = "submit-button">
+          <%= f.submit "更新" %>
+        </div>
+
+    <% end %>
+
   </div>
 
-  <% end %>
 </div>
+
