@@ -8,9 +8,9 @@
 </div>
 
 <% if @search_posts %>
-<div class="post-list">
-  <% @search_posts.each do |post| %>
-    <p><%= link_to(post.title, post_path(post.id)) %></p>
-  <% end %>
-</div>
+  <div class="post-list">
+    <% @search_posts.each do |post| %>
+      <p><%= link_to(post.title, post_path(post.id)) %></p>
+    <% end %>
+  </div>
 <% end %>

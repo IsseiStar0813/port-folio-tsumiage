@@ -58,8 +58,10 @@ class PostsController < ApplicationController
 
   # 検索機能
   def search
-    @search_posts = Post.search(params[:keyword])
-    @keyword = params[:keyword]
+    if params[:keyword]
+      @search_posts = Post.search(params[:keyword])
+      @keyword = params[:keyword]
+    end
   end
 
   private
