@@ -1,5 +1,4 @@
 
-
 /* header */
 
 header {
@@ -25,7 +24,7 @@ header {
 
 .profile{
   padding: 0 80px;
-  margin: 50px 100px 50px 150px;
+  margin: 50px auto 50px 150px;
   background-color: #D5EEF2;
   display: inline-block;
 }
@@ -41,7 +40,7 @@ header {
 
 .calender{
   float: right;
-  margin: 50px 50px;
+  margin: 50px;
   width: 27%;
   h1 {
     font-size:25px;
