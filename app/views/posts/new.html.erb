@@ -1,9 +1,9 @@
 <div class = "container">
 
-  <%= form_with(model: @post, local: true) do |f| %>
-      <%= render "shared/error_message", object: f.object %>
+  <div class = "new-post">
 
-      <div class = "new-post">
+    <%= form_with(model: @post, local: true) do |f| %>
+    <%= render "shared/error_message", object: f.object %>
 
         <div class = "title-field">
           <%= f.text_field :title, :placeholder => "タイトルを入力してください" %>
@@ -14,16 +14,16 @@
         </div>
 
         <div>
-          <%= f.hidden_field :start_time, :value => Date.today %>
+            <%= f.hidden_field :start_time, :value => Date.today %>
         </div>
 
         <div class = "submit-button">
           <%= f.submit "投稿" %>
         </div>
 
-    </div>
+    <% end %>
 
-  <% end %>
+  </div>
 
 </div>
 
