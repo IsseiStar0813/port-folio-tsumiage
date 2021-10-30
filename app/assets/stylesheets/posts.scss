@@ -1,0 +1,39 @@
+// Place all the styles related to the microposts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+/* posting-page */
+
+/* form */
+
+
+.new-post{
+
+  width: 900px;
+  margin: 40px auto;
+
+  .title-field{
+    padding-bottom: 30px;
+    input {
+      width: 300px;
+      height: 30px;
+    }
+  }
+
+  .content-field{
+
+    textarea{
+      width: 100%;
+      height: 450px;
+    }
+  }
+
+  .submit-button{
+    input{
+      height: 50px;
+      width: 120px;
+      margin: 30px 0 30px 785px;
+    }
+  }
+}

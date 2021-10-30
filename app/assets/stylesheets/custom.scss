@@ -18,131 +18,13 @@ header {
   padding: 10px;
 }
 
-/* home page */
-
-/* profile */
-
-.profile{
-  padding: 0 80px;
-  margin: 50px auto 50px 150px;
-  background-color: #D5EEF2;
-  display: inline-block;
-}
-
-
-.profile-item{
-  display: inline-block;
-  font-size: 30px;
-  padding:5px 25px;
-}
-
-/* calender */
-
-.calender{
-  float: right;
-  margin: 50px;
-  width: 27%;
-  h1 {
-    font-size:25px;
-  }
-  
-}
 
 
 
-/* body */
-
-.home-body{
-  display:flex;
-}
-
-/* button */
-
-.tsumiage-button{
-  button{
-    margin: 10px 150px auto 230px;
-    height: 150px;
-    width: 150px;
-  }
-}
-
-/* posts */
-
-.latest-posts{
-  h1{
-    font-size: 25px;
-  }
-  p{
-    font-size: 20px;
-  }
-}
 
 
 
-/* posting-page */
 
-/* form */
-
-
-.new-post{
-
-  width: 900px;
-  margin: 40px auto;
-
-  .title-field{
-    padding-bottom: 30px;
-    input {
-      width: 300px;
-      height: 30px;
-    }
-  }
-
-  .content-field{
-
-    textarea{
-      width: 100%;
-      height: 450px;
-    }
-  }
-
-  .submit-button{
-    input{
-      height: 50px;
-      width: 120px;
-      margin: 30px 0 30px 785px;
-    }
-  }
-}
-
-/* setting */
-
-.setting-user{
-
-  margin: 100px auto auto 200px;
-  .field{
-    margin: 40px 0;
-    input{
-      height: 30px;
-      width: 180px;
-    }
-  }
-
-  .button{
-
-    margin-left:250px;
-
-    input{
-      height: 30px;
-      width: 100px;
-    }
-    
-  }
-
-  p{
-    margin-top: 150px;
-  }
-
-}
 
 
 
