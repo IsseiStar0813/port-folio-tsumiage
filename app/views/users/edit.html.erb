@@ -1,23 +1,37 @@
+<div class = "container">
+  <div class = "setting-user">
 
-  <%= form_with(model: @user, local: true) do |f| %>
-  <%= render "shared/error_message", object: f.object%>
+    <%= form_with(model: @user, local: true) do |f| %>
+    <%= render "shared/error_message", object: f.object%>
 
-    <%= f.label :name, "NAME" %>
-    <%= f.text_field :name %>
+      <div class = "field">
+        <%= f.label :name, "名前" %>
+        <%= f.text_field :name %>
+      </div>
 
-    <%= f.label :email, "EMAIL" %>
-    <%= f.email_field :email %>
+      <div class = "field">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email %>
+      </div>
 
-    <%= f.label :password, "PASSWORD" %>
-    <%= f.password_field :password %>
+      <div class = "field">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password %>
+      </div>
 
-    <%= f.label :password_confirmation, "PASSWORD CONFIRMATION" %>
-    <%= f.password_field :password_confirmation %>
+      <div class = "field">
+        <%= f.label :password_confirmation, "パスワード確認" %>
+        <%= f.password_field :password_confirmation %>
+      </div>
 
-    <%= f.submit "UPDATE" %>
+      <div class = "button">
+        <%= f.submit "更新" %>
+      </div>
 
-  <% end %>
+    <% end %>
 
 
-<p><%= link_to("DELETE USER", user_path(@user), method: :delete,
-                data: {confirm: "ユーザーを削除しますか？"}) %></p>
+    <p><%= link_to("ユーザー削除", user_path(@user), method: :delete,
+                  data: {confirm: "ユーザーを削除しますか？"}) %></p>
+  </div>
+</div>

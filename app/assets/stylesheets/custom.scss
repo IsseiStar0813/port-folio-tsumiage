@@ -114,6 +114,36 @@ header {
   }
 }
 
+/* setting */
+
+.setting-user{
+
+  margin: 100px auto auto 200px;
+  .field{
+    margin: 40px 0;
+    input{
+      height: 30px;
+      width: 180px;
+    }
+  }
+
+  .button{
+
+    margin-left:250px;
+
+    input{
+      height: 30px;
+      width: 100px;
+    }
+    
+  }
+
+  p{
+    margin-top: 150px;
+  }
+
+}
+
 
 
 
