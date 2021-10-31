@@ -4,9 +4,7 @@
 
 
 /* posting-page */
-
 /* form */
-
 .new-post{
 
   width: 900px;
@@ -34,5 +32,30 @@
       width: 120px;
       margin: 30px 0 30px 785px;
     }
+  }
+}
+
+/* search page */
+.search-post{
+  margin: 50px auto auto 200px;
+
+  /* form */
+  .form{
+    p{
+      font-size: 25px;
+    }
+    input{
+      height: 30px;
+      width: 350px;
+    }
+    .button{
+      height: 30px;
+      width:100px;
+    }
+  }
+
+  /* posts */
+  .post-list{
+    font-size: 20px;
   }
 }

@@ -1,16 +1,19 @@
-キーワードを入力してください
+<div class = "search-post">
 
-<div class="search-form">
-  <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :keyword, value: @keyword %>
-    <%= f.submit "検索" %>
-  <% end %>
-</div>
-
-<% if @search_posts %>
-  <div class="post-list">
-    <% @search_posts.each do |post| %>
-      <p><%= link_to(post.title, post_path(post.id)) %></p>
+  <div class="form">
+    <p>キーワードを入力してください</p>
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.text_field :keyword, value: @keyword %>
+      <%= f.submit "検索", class: "button" %>
     <% end %>
   </div>
-<% end %>
+
+  <% if @search_posts %>
+    <div class="post-list">
+      <% @search_posts.each do |post| %>
+        <p><%= link_to(post.title, post_path(post.id)) %></p>
+      <% end %>
+    </div>
+  <% end %>
+ 
+</div>
