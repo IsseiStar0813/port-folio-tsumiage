@@ -59,3 +59,33 @@
     font-size: 20px;
   }
 }
+
+
+/* post page */
+.post-container{
+  width: 1000px;
+  margin: 60px auto ;
+  /* detail */
+  .post-detail{
+    h1{
+      font-size: 30px;
+    }
+
+    .content{
+      margin: 40px 0 60px 0;
+      font-size: 22px;
+    }
+
+    .created-at{
+      font-size: 17px;
+    }
+  }
+
+  /* setting */
+  .post-setting{
+    margin-top: 100px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0 20px;
+  }
+}

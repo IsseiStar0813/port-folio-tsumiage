@@ -1,22 +1,13 @@
-<div class = "container">
-
+<div class = "post-container">
   <div class = "post-detail">
-
-   
     <h1><%= @post.title %></h1>
-       
-    <p><%= @post.content %></p>
-    
-    <p><%= @post.created_at %></p>
-
-    <p><%= link_to("編集", edit_post_path(@post.id)) %></p>
-
-    <P><%= link_to("削除", post_path, method: :delete,
-                                       data: { confirm: "削除しますか?" } ) %>
-    
-
-
-
+    <p class = "content"><%= @post.content %></p>   
+    <p class = "created-at"><%= @post.created_at %></p>
   </div>
 
+  <div class = "post-setting">
+    <p><%= link_to("編集", edit_post_path(@post.id)) %></p>
+    <P><%= link_to("削除", post_path, method: :delete,
+                                        data: { confirm: "削除しますか?" } ) %>
+  </div>
 </div>
