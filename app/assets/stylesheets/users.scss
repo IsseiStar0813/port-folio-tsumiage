@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+$purple: #C77EB5;
+
 /* home page */
 
 /* profile */
@@ -61,11 +63,12 @@
   }
 }
 
-/* setting */
+/* register,setting page */
 
-.setting-user{
+.register-user{
 
-  margin: 100px auto auto 200px;
+  margin-top: 100px;
+  text-align: center;
   .field{
     margin: 40px 0;
     input{
@@ -79,8 +82,14 @@
     margin-left:250px;
 
     input{
+      background-color: $purple;
       height: 30px;
       width: 100px;
+      border: none;
+    }
+
+    input:hover {
+      opacity: 0.6;
     }
     
   }
