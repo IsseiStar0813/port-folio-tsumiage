@@ -15,7 +15,7 @@ class PostsController < ApplicationController
       current_user.update(tsumiage_count: @tsumiage_count, already_posted: true)
       end
       flash[:success] = "投稿しました"
-      redirect_to current_user
+      redirect_to @post
     else
       # 投稿失敗
       render "new"
