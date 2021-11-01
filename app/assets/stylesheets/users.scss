@@ -7,7 +7,6 @@ $purple: #C77EB5;
 /* home page */
 
 /* profile */
-
 .profile{
   padding: 0 80px;
   margin: 50px auto 50px 150px;
@@ -23,7 +22,6 @@ $purple: #C77EB5;
 }
 
 /* calender */
-
 .calender{
   float: right;
   margin: 50px;
@@ -37,13 +35,11 @@ $purple: #C77EB5;
 
 
 /* body */
-
 .home-body{
   display:flex;
 }
 
 /* button */
-
 .tsumiage-button{
   button{
     margin: 10px 150px auto 230px;
@@ -53,7 +49,6 @@ $purple: #C77EB5;
 }
 
 /* posts */
-
 .latest-posts{
   h1{
     font-size: 25px;
@@ -63,9 +58,11 @@ $purple: #C77EB5;
   }
 }
 
-/* register,setting page */
 
-.register-user{
+
+/* register,setting,login page */
+
+.form-user{
 
   margin-top: 100px;
   text-align: center;
@@ -95,7 +92,12 @@ $purple: #C77EB5;
   }
 
   p{
-    margin-top: 150px;
+    margin-top: 100px;
   }
 
 }
+
+
+
+
+

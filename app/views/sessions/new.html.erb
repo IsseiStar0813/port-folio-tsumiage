@@ -1,19 +1,31 @@
-<h1>Log in</h1>
+<div class = "container">
+  <div class = "form-user">
 
-<%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  
-  <%= f.submit "Log in" %>
-<% end %>
+      <div class = "field">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email %>
+      </div>
 
-<p>パスワードを忘れましたか?</p>
-<%= link_to("Password Reset", password_resets_new_path) %>
+      <div class = "field">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password %>
+      </div>
 
-<p>ユーザー登録はまだですか？</p>
-<%= link_to("Sign up", signup_path) %>
+
+      <div class = "button">
+        <%= f.submit "ログイン" %>
+      </div>
+
+    <% end %>
+
+    <p><%= link_to("パスワードを忘れましたか?", password_resets_new_path) %></p>
+    <p> <%= link_to("ユーザー登録はまだですか？", signup_path) %></p>
+   
+  </div>
+</div>
+
+
 
