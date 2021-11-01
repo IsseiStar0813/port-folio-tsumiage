@@ -73,23 +73,28 @@
   .post-detail{
     h1{
       font-size: 30px;
+      padding-bottom: 20px;
+      border-bottom: solid;
     }
 
     .content{
-      margin: 40px 0 40px 0;
+      margin: 20px 0 40px 0;
       font-size: 22px;
     }
 
     .created-at{
       font-size: 17px;
+      color: gray;
     }
   }
 
   /* setting */
   .post-setting{
-    margin-top: 100px;
+    border-top: solid;
+    margin-top: 20px;
     display: flex;
     justify-content: flex-end;
     gap: 0 20px;
+    font-size:18px;
   }
 }
