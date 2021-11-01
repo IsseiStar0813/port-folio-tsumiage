@@ -2,11 +2,12 @@
   <%# ユーザーがログイン中の場合 %>
   <h1 class = "title"><%= link_to("TSUMIAGE", current_user) %></h1>
   <ul>
-    <li class = "header-item"><%= link_to("Profile", current_user) %>
-    <li class = "header-item"><%= link_to("Posting", new_post_path) %>
-    <li class = "header-item"><%= link_to("Settings", edit_user_path(current_user)) %>
-    <li class = "header-item"><%= link_to("Log out", logout_path ,method: :delete) %>
-    <li class = "header-item"><%= link_to("Search", search_path ) %>
+    <li class = "header-item"><%= link_to("プロフィール", current_user) %>
+    <li class = "header-item"><%= link_to("積み上げる", new_post_path) %>
+    <li class = "header-item"><%= link_to("検索", search_path ) %>
+    <li class = "header-item"><%= link_to("設定", edit_user_path(current_user)) %>
+    <li class = "header-item"><%= link_to("ログアウト", logout_path ,method: :delete) %>
+    
   </ul>
  <% else %>
   <%# ログインしていない場合 %>
