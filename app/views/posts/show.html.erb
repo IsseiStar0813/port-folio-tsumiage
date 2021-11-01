@@ -1,7 +1,7 @@
 <div class = "post-container">
   <div class = "post-detail">
     <h1><%= @post.title %></h1>
-    <p class = "content"><%= @post.content %></p>   
+    <p class = "content"><%=safe_join(@post.content.split("\n"),tag(:br))%></p>   
     <p class = "created-at"><%= @post.created_at %></p>
   </div>
 
