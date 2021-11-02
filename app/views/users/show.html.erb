@@ -1,7 +1,10 @@
 <div class = "container">
 
+    <%= link_to new_post_path do %>
+      <button class = "tsumiage-button">積み上げる</button>
+    <% end %>
+  
   <div class = "profile">
-
     <div class = "profile-item">
         <p><%= @user.name %></p>
     </div>
@@ -13,7 +16,6 @@
     <div class = "profile-item">
         <p><%= @user.tsumiage_count %>日継続</p>
     </div>
-
   </div>
 
   <div class = "calender">
@@ -30,21 +32,11 @@
         <% end %>
   </div>
 
-  <div class = "home-body">
-
-    <div class = "tsumiage-button">
-      <%= link_to new_post_path do %>
-        <button >積み上げる</button>
-      <% end %>
-    </div>
-
-    <div class = "latest-posts">
-      <h1>最近の投稿</h1>
-        <% @posts.first(8).each do |post| %>
-          <p> <%= link_to(post.title, post_path(post.id)) %> </p> 
-        <% end %>
-    </div>
-    
+  <div class = "latest-posts">
+    <h1>最近の投稿</h1>
+    <% @posts.first(8).each do |post| %>
+      <p> <%= link_to(post.title, post_path(post.id), class: "link") %></p> 
+    <% end %>
   </div>
 
 </div>

@@ -2,16 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-$purple: #C77EB5;
+
+.link{
+  text-decoration: none;
+  color: black ; 
+}
+
+.link:hover{
+  text-decoration: underline;
+}
 
 /* home page */
+/* button */
+.tsumiage-button{
+    margin: 10px 45px auto 45px;
+    height: 100px;
+    width: 150px;
+    font-size:20px;
+    border: none;
+  }
+
+  .tsumiage-button:hover{
+    opacity: 0.8;
+}
 
 /* profile */
 .profile{
   padding: 0 80px;
-  margin: 50px auto 50px 150px;
+  margin: 50px auto 30px 0px;
   display: inline-block;
-  background-color: lightgray;
+  background-color: #d3d3d3;
 }
 
 
@@ -24,7 +44,7 @@ $purple: #C77EB5;
 /* calender */
 .calender{
   float: right;
-  margin: 50px;
+  margin: 40px;
   width: 27%;
   h1 {
     font-size:25px;
@@ -33,29 +53,17 @@ $purple: #C77EB5;
 }
 
 
-
-/* body */
-.home-body{
-  display:flex;
-}
-
-/* button */
-.tsumiage-button{
-  button{
-    margin: 10px 150px auto 230px;
-    height: 150px;
-    width: 150px;
-  }
-}
-
 /* posts */
 .latest-posts{
+  margin-left: 400px;
+  
   h1{
-    font-size: 25px;
+    font-size: 28px;
   }
   p{
     font-size: 20px;
   }
+  
 }
 
 
@@ -79,14 +87,14 @@ $purple: #C77EB5;
     margin-left:250px;
 
     input{
-      background-color: $purple;
+      
       height: 30px;
       width: 100px;
       border: none;
     }
 
     input:hover {
-      opacity: 0.6;
+      opacity: 0.8;
     }
     
   }
