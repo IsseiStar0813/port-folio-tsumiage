@@ -7,5 +7,6 @@ ja:
         password: パスワード
         password_confirmation: パスワード
       
-      micropost:
+      post:
+        title: タイトル
         content: 投稿内容
