@@ -12,7 +12,7 @@
     <div class="post-list">
       <% @search_posts.each do |post| %>
         <p><%= link_to(post.title, post_path(post.id)) %>
-        <span><%= post.created_at %></span></p>
+        <span><%= japanese_time(post.created_at) %></span></p>
       <% end %>
     </div>
   <% end %>
