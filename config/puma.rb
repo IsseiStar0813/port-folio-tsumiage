@@ -16,16 +16,17 @@ worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
 
+# 開発環境のportの指定
 rails_env = ENV.fetch("RAILS_ENV") { "developmen" }
 if rails_env == "development"
   port ENV.fetch("PORT") { 3000 }
 end
 environment rails_env
   
-
+# 本番環境のソケットの指定
 rails_env = ENV.fetch("RAILS_ENV") { "production" }
 if rails_env == "production"
-  bind "unix:///var/www/test_app/tmp/sockets/puma.sock"
+  bind "unix:///var/www/port-folio-tsumiage/tmp/sockets/puma.sock"
 end
 environment rails_env
 
