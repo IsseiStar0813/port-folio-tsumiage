@@ -71,8 +71,7 @@ class User < ApplicationRecord
     reset_sent_at < 30.minutes.ago
   end
 
-
-
+  
   # 全ユーザー未投稿状態にする
   def self.make_user_unposted
     users = User.all
