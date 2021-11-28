@@ -13,7 +13,6 @@ gem 'jquery-rails'
 gem 'whenever', require: false
 gem "simple_calendar", "~> 2.4"
 gem "mysql2"
-gem "puma-daemon", require: false
 
 
 
