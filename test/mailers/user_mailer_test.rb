@@ -8,7 +8,7 @@ class UserMailerTest < ActionMailer::TestCase
     mail = UserMailer.account_activation(user)
     assert_equal "メールアドレスの確認", mail.subject
     assert_equal [user.email], mail.to
-    assert_equal ["noreply@example.com"], mail.from
+    assert_equal ["noreplytsumiage@gmail.com"], mail.from
   end
 
 end

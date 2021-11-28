@@ -27,8 +27,11 @@ environment rails_env
 rails_env = ENV.fetch("RAILS_ENV") { "production" }
 if rails_env == "production"
   bind "unix:///var/www/port-folio-tsumiage/tmp/sockets/puma.sock"
+  daemonize
 end
 environment rails_env
+
+
 
 
 
