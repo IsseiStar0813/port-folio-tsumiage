@@ -119,9 +119,6 @@ GEM
     public_suffix (4.0.6)
     puma (5.4.0)
       nio4r (~> 2.0)
-    puma-daemon (0.1.2)
-      puma (>= 5.0)
-      rack
     racc (1.5.2)
     rack (2.2.3)
     rack-mini-profiler (2.3.2)
@@ -185,6 +182,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sd_notify (0.1.1)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -244,13 +242,13 @@ DEPENDENCIES
   mysql2
   pg (~> 1.1)
   puma (~> 5.0)
-  puma-daemon
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4)
   rails-controller-testing
   rails-i18n
   rexml
   sass-rails (>= 6)
+  sd_notify
   selenium-webdriver
   simple_calendar (~> 2.4)
   spring
