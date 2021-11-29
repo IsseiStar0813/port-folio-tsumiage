@@ -1,4 +1,4 @@
 <h1><%= @user.name %>さん、リンクをクリックして、アカウント登録を完了してください。</h1>
 
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+<%= link_to "有効化", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
