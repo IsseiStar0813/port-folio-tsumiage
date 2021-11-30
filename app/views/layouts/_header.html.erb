@@ -1,6 +1,6 @@
  <% if logged_in? %>
   <%# ユーザーがログイン中の場合 %>
-  <h1 class = "title"><%= link_to("TSUMIAGE", current_user, class: "link") %></h1>
+  <h1 class = "text-4xl"><%= link_to("TSUMIAGE", current_user, class: "link") %></h1>
   <ul>
     <li class = "header-item"><%= link_to("プロフィール", current_user, class: "link") %>
     <li class = "header-item"><%= link_to("積み上げる", new_post_path, class: "link") %>
