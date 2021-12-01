@@ -1,5 +1,16 @@
-<h1 class = "title">TSUMIAGE</h1>
-<ul>
-  <li class = "header-item"><%= link_to("サインアップ", signup_path) %>
-  <li class = "header-item"><%= link_to("ログイン", login_path) %>
-</ul>
+<div class = "flex justify-between items-center">
+  <h1 class = "text-3xl"><%= link_to("TSUMIAGE",root_path) %></h1>
+    <div>
+      <button onclick = toggleHidden()>
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
+        </svg>                       
+      </button>
+    </div>
+</div>
+<div>
+  <ul id = "humburger" class = "hidden">
+    <li class = "header-item"><%= link_to("サインアップ", signup_path) %>
+    <li class = "header-item"><%= link_to("ログイン", login_path) %>
+  </ul>
+</div>

@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <header>
+    <header class = "container-fluid mx-auto  border-solid border-b-4 border-gray-700">
     <%# ランディングページとその他のページでヘッダー表示を変更する %>
     <% if request.path == '/' %>
     <%#ランディングページのヘッダー %>
@@ -24,5 +24,11 @@
     <%#フラッシュメッセージの表示 %>
     <%= render "shared/flash_message" %>
     <%= yield %>
+    <script>
+      humburger = document.getElementById("humburger");
+      function toggleHidden() {
+      humburger.classList.toggle("hidden");
+      };
+    </script>
   </body>
 </html>
