@@ -3,37 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-/* search page */
-.search-post{
-  margin-top: 70px;
-  text-align: center;
-
-  /* form */
-  .form{
-    p{
-      font-size: 25px;
-    }
-    input{
-      height: 30px;
-      width: 350px;
-    }
-    .button{
-      height: 30px;
-      width:100px;
-    }
-  }
-
-  /* posts */
-  .post-list{
-    font-size: 17px;
-
-    span{
-      margin-left: 100px;
-    }
-  }
-}
-
-
 /* post page */
 .post-container{
   width: 1000px;

@@ -1,18 +1,22 @@
-<div class = "search-post">
+<div>
 
-  <div class="form">
-    <p>キーワードを入力してください</p>
-    <%= form_with url: search_path, method: :get, local: true do |f| %>
-      <%= f.text_field :keyword, value: @keyword %>
-      <%= f.submit "検索", class: "button" %>
+  <div class = "my-8">
+    <%= form_with url: search_path, method: :get, local: true, class: "flex justify-between" do |f| %>
+      <%= f.text_field :keyword, value: @keyword, class: "border-2 border-gray-400 w-full mr-6 text-xl", :placeholder => "キーワードを入力してください" %>
+      <%= f.submit "検索", class: "bg-transparent md:hover:bg-purple-600 text-purple-700 font-semibold md:hover:text-white py-1 px-4
+       border-2 border-purple-600 md:hover:border-transparent rounded md:text-2xl md:w-40" %>
     <% end %>
   </div>
 
   <% if @search_posts %>
-    <div class="post-list">
+    <div class = "md:mx-10">
       <% @search_posts.each do |post| %>
-        <p><%= link_to(post.title, post_path(post.id)) %>
-        <span><%= japanese_time(post.created_at) %></span></p>
+      <%= link_to (post_path(post.id)) do %>
+        <div class = "border-b-2 border-gray-400 mb-2 md:mb-8">
+          <p class = "text-lg"><%= post.title %></p>
+          <p class = "text-right"><%= japanese_time(post.created_at) %></p>
+        </div>
+       <% end %>
       <% end %>
     </div>
   <% end %>
