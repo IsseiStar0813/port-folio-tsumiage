@@ -3,36 +3,3 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-/* post page */
-.post-container{
-  width: 1000px;
-  margin: 60px auto ;
-  /* detail */
-  .post-detail{
-    h1{
-      font-size: 30px;
-      padding-bottom: 20px;
-      border-bottom: solid;
-    }
-
-    .content{
-      margin: 20px 0 40px 0;
-      font-size: 22px;
-    }
-
-    .created-at{
-      font-size: 17px;
-      color: gray;
-    }
-  }
-
-  /* setting */
-  .post-setting{
-    border-top: solid;
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 0 20px;
-    font-size:18px;
-  }
-}
