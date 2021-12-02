@@ -1,42 +1,35 @@
-<div class = "container">
-
-    <%= link_to new_post_path do %>
-      <button class = "tsumiage-button">積み上げる</button>
-    <% end %>
+<div class = "container-fluid mx-5">
   
-  <div class = "profile">
-    <div class = "profile-item">
-        <p><%= @user.name %></p>
-    </div>
-
-    <div class = "profile-item">
-        <p><%= @user.posts.count %>積み上げ</p>
-    </div>
-
-    <div class = "profile-item">
-        <p><%= @user.tsumiage_count %>日継続</p>
-    </div>
+  <div class = "my-6 border-b-4 border-gray-400">
+    <h1 class = "text-xl"><%= @user.name %></h1>
+    <ul class = "flex items-center pb-2">
+      <li class = "pr-2"><%= @user.posts.count %>積み上げ</li>
+      <li><%= @user.tsumiage_count %>日継続</li>
+      <li class = "ml-auto mr-0"> <%= link_to new_post_path do %>
+        <button class = "bg-transparent md:hover:bg-purple-600 text-purple-700 font-semibold md:hover:text-white py-2 px-4 border-2 border-purple-600 md:hover:border-transparent rounded">積み上げる</button>
+         <% end %></li>
+    </ul>
   </div>
 
-  <div class = "calender">
-      <h1>学習カレンダー</h1>
-        <%= month_calendar events: @posts do |date,events| %>
-          <%= date.day %>
-
-            <div>
-              <% if !events.empty? %>
-                積
-              <% end %>
-            </div>
-        
-        <% end %>
+  <div class = "mb-4">
+    <h1 class = "text-xl">学習カレンダー</h1>
+    <%= month_calendar events: @posts do |date,events| %>
+      <%= date.day %>
+        <div>
+          <% if !events.empty? %>
+            積
+          <% end %>
+        </div>
+      <% end %>
   </div>
 
-  <div class = "latest-posts">
-    <h1>最近の投稿</h1>
-    <% @posts.first(8).each do |post| %>
-      <p> <%= link_to(post.title, post_path(post.id), class: "link") %></p> 
-    <% end %>
+  <div>
+    <h1 class = "text-xl mb-2">最近の投稿</h1>
+    <div>
+      <% @posts.first(8).each do |post| %>
+        <p class = "my-1"> <%= link_to(post.title, post_path(post.id), class: "link") %></p> 
+      <% end %>
+    </div>
   </div>
 
 </div>

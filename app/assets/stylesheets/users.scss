@@ -3,44 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.link{
-  text-decoration: none;
-  color: black ; 
-}
-
-.link:hover{
-  text-decoration: underline;
-}
-
-/* home page */
-/* button */
-.tsumiage-button{
-    margin: 10px 45px auto 45px;
-    height: 100px;
-    width: 150px;
-    font-size:20px;
-    border: none;
-  }
-
-  .tsumiage-button:hover{
-    opacity: 0.8;
-}
-
-/* profile */
-.profile{
-  padding: 0 80px;
-  margin: 50px auto 30px 0px;
-  display: inline-block;
-  background-color: #d3d3d3;
-}
-
-
-.profile-item{
-  display: inline-block;
-  font-size: 30px;
-  padding:5px 25px;
-}
-
 
 
 
