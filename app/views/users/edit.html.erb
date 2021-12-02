@@ -1,37 +1,35 @@
-<div class = "container">
-  <div class = "form-user">
+<div class = "mx-20">
 
-    <%= form_with(model: @user, local: true) do |f| %>
-    <%= render "shared/error_message", object: f.object%>
+  <%= form_with(model: @user, local: true) do |f| %>
+   <%= render "shared/error_message", object: f.object%>
 
-      <div class = "field">
-        <%= f.label :name, "名前" %>
-        <%= f.text_field :name %>
-      </div>
+    <div class = "mt-8">
+      <%= f.label :name, "名前" %>
+      <%= f.text_field :name, class: "block border-2 border-gray-400 w-full mt-1 py-1" %>
+    </div>
 
-      <div class = "field">
-        <%= f.label :email, "メールアドレス" %>
-        <%= f.email_field :email %>
-      </div>
+    <div class = "mt-4">
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email, class: "block border-2 border-gray-400 w-full mt-1 py-1" %>
+    </div>
 
-      <div class = "field">
-        <%= f.label :password, "パスワード" %>
-        <%= f.password_field :password %>
-      </div>
+    <div class = "mt-4">
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password, class: "block border-2 border-gray-400 w-full mt-1 py-1" %>
+    </div>
 
-      <div class = "field">
-        <%= f.label :password_confirmation, "パスワード確認" %>
-        <%= f.password_field :password_confirmation %>
-      </div>
+    <div class = "mt-4">
+      <%= f.label :password_confirmation, "パスワード確認" %>
+      <%= f.password_field :password_confirmation, class: "block border-2 border-gray-400 w-full mt-1 py-1" %>
+    </div>
 
-      <div class = "button">
-        <%= f.submit "更新" %>
-      </div>
-
-    <% end %>
-
-
-    <p><%= link_to("ユーザー削除", user_path(@user), method: :delete,
-                  data: {confirm: "ユーザーを削除しますか？"}) %></p>
-  </div>
+    <div>
+      <%= f.submit "更新", class: "bg-transparent md:hover:bg-purple-600 text-purple-700 font-semibold md:hover:text-white px-4 
+      border-2 border-purple-600 md:hover:border-transparent rounded md:text-2xl mt-8 py-1 w-full" %>
+    </div>
+  <% end %>
+  <%= link_to(user_path(@user), method: :delete, data: {confirm: "ユーザーを削除しますか？"}) do %>
+    <button class = "bg-transparent md:hover:bg-red-600 text-red-700 font-semibold md:hover:text-white px-4
+      border-2 border-red-600 md:hover:border-transparent rounded md:text-2xl mt-4 mt-44">ユーザー削除</button>
+  <% end %>
 </div>

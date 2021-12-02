@@ -4,7 +4,8 @@
       <li class = "pr-2 md:text-2xl"><%= @user.posts.count %>積み上げ</li>
       <li class = "md:text-2xl"><%= @user.tsumiage_count %>日継続</li>
       <li class = "ml-auto mr-0"> <%= link_to new_post_path do %>
-        <button class = "bg-transparent md:hover:bg-purple-600 text-purple-700 font-semibold md:hover:text-white py-2 px-4 border-2 border-purple-600 md:hover:border-transparent rounded md:text-2xl">積み上げる</button>
+        <button class = "bg-transparent md:hover:bg-purple-600 text-purple-700 font-semibold md:hover:text-white py-2 px-4
+         border-2 border-purple-600 md:hover:border-transparent rounded md:text-2xl">積み上げる</button>
          <% end %></li>
     </ul>
   </div>
