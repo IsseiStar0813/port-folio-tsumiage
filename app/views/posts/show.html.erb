@@ -1,13 +1,21 @@
-<div class = "post-container">
-  <div class = "post-detail">
-    <h1><%= @post.title %></h1>
-    <p class = "content"><%=safe_join(@post.content.split("\n"),tag(:br))%></p>   
-    <p class = "created-at"><%= japanese_time(@post.created_at) %></p>
+<div class = "mt-10 md:mx-20">
+
+  <div class = "border-b-2 border-gray-600 pb-2">
+    <h1 class = "text-xl pb-2 border-b-2 border-gray-600"><%= @post.title %></h1>
+    <p class = "text-lg py-2"><%=safe_join(@post.content.split("\n"),tag(:br))%></p>   
+    <p class = "text-gray-500 pt-4"><%= japanese_time(@post.created_at) %></p>
   </div>
 
-  <div class = "post-setting">
-    <p><%= link_to("編集", edit_post_path(@post.id)) %></p>
-    <P><%= link_to("削除", post_path, method: :delete,
-                                        data: { confirm: "削除しますか?" } ) %>
+  <div class = "flex justify-between mt-16 mx-4">
+    <%= link_to(post_path, method: :delete,data: { confirm: "削除しますか?" } ) do %>
+      <button class = "bg-transparent md:hover:bg-red-600 text-red-700 font-semibold md:hover:text-white px-4
+      border-2 border-red-600 md:hover:border-transparent rounded md:text-2xl w-32 md:w-60">削除</button>
+    <% end %>
+
+    <%= link_to(edit_post_path(@post.id)) do %>
+      <button class = "bg-transparent md:hover:bg-purple-600 text-purple-700 font-semibold md:hover:text-white px-4
+      border-2 border-purple-600 md:hover:border-transparent rounded md:text-2xl w-32 md:w-60">編集</button>
+    <% end %>
   </div>
+
 </div>
