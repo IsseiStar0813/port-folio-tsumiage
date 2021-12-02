@@ -1,30 +1,26 @@
-<div class = "container">
-  <div class = "form-user">
-
+<div class = "mt-10 md:mx-60">  
+  <div>
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
-
-      <div class = "field">
+      <div class = "mt-4">
         <%= f.label :email, "メールアドレス" %>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, class: "block border-2 border-gray-400 w-full mt-1 py-1" %>
       </div>
 
-      <div class = "field">
+      <div class = "mt-4">
         <%= f.label :password, "パスワード" %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, class: "block border-2 border-gray-400 w-full mt-1 py-1" %>
       </div>
 
-
-      <div class = "button">
-        <%= f.submit "ログイン" %>
+      <div>
+        <%= f.submit "ログイン", class: "bg-transparent md:hover:bg-purple-600 text-purple-700 font-semibold md:hover:text-white px-4
+      border-2 border-purple-600 md:hover:border-transparent rounded md:text-2xl mt-8 w-full py-1" %>
       </div>
 
     <% end %>
-
-    <p><%= link_to("パスワードを忘れましたか?", password_resets_new_path) %></p>
-    <p> <%= link_to("ユーザー登録はまだですか？", signup_path) %></p>
-   
   </div>
+
+    <p class = "mt-14"><%= link_to("パスワード再設定", password_resets_new_path) %></p>
 </div>
 
 
