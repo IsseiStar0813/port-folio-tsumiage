@@ -35,7 +35,7 @@
           <li class = "py-1 md:px-3 md:text-xl"><%= link_to("ログアウト", logout_path ,method: :delete) %>
         <% else %>
         <%#ログインしていない場合%> 
-          <li class = "py-1 md:px-3 md:text-xl"><%= link_to("サインアップ", signup_path) %>
+          <li class = "py-1 md:px-3 md:text-xl"><%= link_to("ユーザー登録", signup_path) %>
           <li class = "py-1 md:px-3 md:text-xl"><%= link_to("ログイン", login_path) %>
         <% end %>
       </ul>
