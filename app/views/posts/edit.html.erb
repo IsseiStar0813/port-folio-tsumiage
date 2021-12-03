@@ -1,4 +1,4 @@
-<div class = "mt-10 md:mx-60">
+<div class = "mt-10 lg:mx-60">
     <%= form_with(model: @post, local: true) do |f| %>
     <%= render "shared/error_message", object: f.object %>   
       <%= f.text_field :title, class: "border-2 border-gray-400 w-full py-1", :placeholder => "タイトルを入力してください" %>

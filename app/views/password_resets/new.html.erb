@@ -1,9 +1,14 @@
-<h1>PasswordReset</h1>
+<div class =  "lg:mx-60">
 
-<%= form_with(url: password_resets_path, scope: :password_reset,
-            local: true) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+      <h1 class = "text-xl my-10">パスワード再設定</h1>
 
-      <%= f.submit "Submit" %>
-<% end %>
+      <%= form_with(url: password_resets_path, scope: :password_reset, local: true) do |f| %>
+
+      <%= f.label :email, "登録しているメールアドレスを入力してください" %>
+      <%= f.email_field :email, class: "block border-2 border-gray-400 w-full mt-1 py-1" %>
+            
+      <%= f.submit "送信", class: "bg-transparent md:hover:bg-purple-600 text-purple-700 font-semibold md:hover:text-white px-4
+            border-2 border-purple-600 md:hover:border-transparent rounded md:text-2xl mt-4 float-right py-1" %>
+
+      <% end %>
+</div>
