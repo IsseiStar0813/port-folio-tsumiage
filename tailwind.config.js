@@ -1,5 +1,7 @@
 module.exports = {
-  purge: [/var/www/port-folio-tsumiage/app/views],
+  purge: ['./app/**/*.html.erb',
+          './app/helpers/**/*.rb',
+          './app/javascript/**/*.js',],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
