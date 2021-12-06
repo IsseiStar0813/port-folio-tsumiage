@@ -13,7 +13,7 @@
   <body>
     <header class = "container-fluid mx-auto  border-solid border-b-4 border-gray-700 px-2">
     <div class = "flex justify-between items-center">
-      <h1 class = "text-3xl md:text-5xl"><%= link_to("TSUMIAGE", current_user) %></h1>
+      <h1 class = "text-3xl md:text-5xl hover:underline hover:text-purple-700"><%= link_to("TSUMIAGE", current_user) %></h1>
       <div>
         <button class = "md:hidden" onclick = toggleHidden()>
           <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -28,15 +28,15 @@
         <%# ログイン中か否かで表示を変更する %>
         <% if logged_in? %>
         <%#ログイン中 %>
-          <li class = "py-1 md:px-3 md:text-xl"><%= link_to("プロフィール", current_user) %>
-          <li class = "py-1 md:px-3 md:text-xl"><%= link_to("積み上げる", new_post_path) %>
-          <li class = "py-1 md:px-3 md:text-xl"><%= link_to("検索", search_path ) %>
-          <li class = "py-1 md:px-3 md:text-xl"><%= link_to("設定", edit_user_path(current_user)) %>
-          <li class = "py-1 md:px-3 md:text-xl"><%= link_to("ログアウト", logout_path ,method: :delete) %>
+          <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("プロフィール", current_user) %>
+          <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("積み上げる", new_post_path) %>
+          <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("検索", search_path ) %>
+          <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("設定", edit_user_path(current_user)) %>
+          <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("ログアウト", logout_path ,method: :delete) %>
         <% else %>
         <%#ログインしていない場合%> 
-          <li class = "py-1 md:px-3 md:text-xl"><%= link_to("ユーザー登録", signup_path) %>
-          <li class = "py-1 md:px-3 md:text-xl"><%= link_to("ログイン", login_path) %>
+          <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("ユーザー登録", signup_path) %>
+          <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("ログイン", login_path) %>
         <% end %>
       </ul>
     </div>

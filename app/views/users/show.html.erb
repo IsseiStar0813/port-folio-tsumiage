@@ -28,7 +28,7 @@
       <h1 class = "text-xl mb-2 md:text-3xl">最近の投稿</h1>
       <div class = "md:mt-10">
         <% @posts.first(10).each do |post| %>
-          <p class = "my-1 md:text-xl md:my-4"> <%= link_to(post.title, post_path(post.id), class: "link") %></p> 
+          <p class = "my-1 md:text-xl md:my-4 hover:underline hover:text-purple-700"> <%= link_to(post.title, post_path(post.id), class: "link") %></p> 
         <% end %>
       </div>
     </div>
