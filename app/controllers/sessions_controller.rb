@@ -9,23 +9,23 @@ class SessionsController < ApplicationController
       # ログイン成功
       log_in(user)
       remember user
-      flash[:success] = "ログインしました"
+      flash[:purple] = "ログインしました"
       redirect_to user
       else
         # アカウントが有効化されていない場合
-        flash[:warning] = "メールを確認し、アカウントを有効化してください"
+        flash[:red] = "メールを確認し、アカウントを有効化してください"
         redirect_to root_url
       end
     else
       # ログイン失敗
-      flash.now[:danger] = "メールアドレスかパスワードが間違っています"
+      flash.now[:red] = "メールアドレスかパスワードが間違っています"
       render "sessions/new"
     end
   end
 
   def destroy
     log_out if logged_in?
-    flash[:success] = "ログアウトしました"
+    flash[:red] = "ログアウトしました"
     redirect_to root_url
   end
 end

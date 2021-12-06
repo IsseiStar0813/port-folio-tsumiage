@@ -1,5 +1,5 @@
 <% if flash %>
   <% flash.each do |message_type, message| %>
-    <div class="flash-<%= message_type %>"><%= message %></div>
+    <div class="bg-<%= message_type %>-100 border border-<%= message_type %>-400 text-<%= message_type %>-700 px-4 py-3 rounded relative mx-28 mt-10"><%= message %></div>
   <% end %> 
 <% end %>
