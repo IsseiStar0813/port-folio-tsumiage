@@ -16,9 +16,9 @@
       <h1 class = "text-xl md:text-3xl mb-6">学習カレンダー</h1>
       <%= month_calendar events: @posts do |date,events| %>
         <%= date.day %>
-          <div>
+          <div class = "flex justify-center">
             <% if !events.empty? %>
-              積
+              <p class = "text-purple-700 font-bold text-xl">積</p>
             <% end %>
           </div>
         <% end %>
