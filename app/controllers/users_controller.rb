@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       # 登録成功
       UserMailer.account_activation(@user).deliver_now
-      flash[:purple] = "アカウント有効化用のメールを送信しました"
+      flash[:green] = "アカウント有効化用のメールを送信しました"
       redirect_to root_url
     else
       # 登録失敗
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       # 更新成功
-      flash[:purple] = "情報を更新しました"
+      flash[:green] = "情報を更新しました"
       redirect_to @user
     else
       # 更新失敗

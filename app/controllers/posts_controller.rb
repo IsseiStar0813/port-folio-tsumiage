@@ -14,7 +14,7 @@ class PostsController < ApplicationController
       @tsumiage_count = current_user.tsumiage_count + 1
       current_user.update(tsumiage_count: @tsumiage_count, already_posted: true)
       end
-      flash[:purple] = "投稿しました"
+      flash[:green] = "投稿しました"
       redirect_to @post
     else
       # 投稿失敗
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.find_by(id: params[:id])
     if @post.update(post_params)
       # 更新成功
-      flash[:purple] = "投稿を更新しました"
+      flash[:green] = "投稿を更新しました"
       redirect_to @post
     else
       # 更新失敗

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       # ログイン成功
       log_in(user)
       remember user
-      flash[:purple] = "ログインしました"
+      flash[:green] = "ログインしました"
       redirect_to user
       else
         # アカウントが有効化されていない場合
