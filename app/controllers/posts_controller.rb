@@ -47,11 +47,11 @@ class PostsController < ApplicationController
     unless @post.nil?
       # 削除成功
       @post.destroy
-      flash[:success] = "削除しました"
+      flash[:red] = "削除しました"
       redirect_to current_user
     else
       # 削除失敗
-      flash[:warning] = "他人の投稿は削除できません"
+      flash[:red] = "他人の投稿は削除できません"
       redirect_to root_url
     end
   end

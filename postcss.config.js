@@ -27,5 +27,3 @@ if (process.env.RAILS_ENV === "production") {
     })
   )
 }
-
-module.exports = environment
