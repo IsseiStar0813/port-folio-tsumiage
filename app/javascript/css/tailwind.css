@@ -1,3 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.flash-purple{
+  @apply bg-purple-100 border border-purple-400 text-purple-700
+}

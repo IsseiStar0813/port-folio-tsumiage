@@ -26,7 +26,8 @@
     "test": "test"
   },
   "scripts": {
-    "build": "NODE_ENV=production postcss app/javascript/css/tailwind.css -o app/assets/stylesheets/dist.css"
+    "build": "NODE_ENV=production postcss app/javascript/css/tailwind.css -o app/assets/stylesheets/dist.css",
+    "dev": "postcss app/javascript/css/tailwind.css -o app/assets/stylesheets/dist.css"
   },
   "repository": {
     "type": "git",

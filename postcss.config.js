@@ -1,6 +1,5 @@
-module.exports = {
+module.exports ={
   plugins: [
-    require('cssnano'),
     require('tailwindcss'),
     require('autoprefixer'),
     require('postcss-import'),
