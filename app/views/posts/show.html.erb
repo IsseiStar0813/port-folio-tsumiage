@@ -1,8 +1,8 @@
-<div class = "mt-10 lg:mx-60">
+<div class = "mt-10 xl:mx-60">
 
   <div class = "border-b-2 border-gray-600 pb-2">
     <h1 class = "text-xl pb-2 border-b-2 border-gray-600 md:text-2xl"><%= @post.title %></h1>
-    <p class = "text-lg py-2"><%=safe_join(@post.content.split("\n"),tag(:br))%></p>   
+    <p class = "text-xl py-2"><%=safe_join(@post.content.split("\n"),tag(:br))%></p>   
     <p class = "text-gray-500 pt-4"><%= japanese_time(@post.created_at) %></p>
   </div>
 
