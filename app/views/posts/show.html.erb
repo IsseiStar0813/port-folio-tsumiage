@@ -7,7 +7,7 @@
   </div>
 
   <div class = "flex justify-between mt-16 mx-4 mb-10">
-    <%= button_to(post_path, method: :delete,data: { confirm: "削除しますか?" } ) do %>
+    <%= button_to(post_path, method: :delete) do %>
       <button class = "bg-transparent md:hover:bg-red-600 text-red-700 font-semibold md:hover:text-white px-4
       border-2 border-red-600 md:hover:border-transparent rounded md:text-2xl w-32 md:w-60">削除</button>
     <% end %>

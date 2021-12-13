@@ -34,7 +34,7 @@
           <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("積み上げる", new_post_path) %>
           <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("検索", search_path ) %>
           <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("設定", edit_user_path(current_user)) %>
-          <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= button_to("ログアウト", logout_path ,method: :delete) %>
+          <li class = "py-1 md:px-3 md:text-xl hover:text-yellow-400"><%= button_to("ログアウト", logout_path, class: "bg-white hover:underline", method: :delete) %>
         <% else %>
         <%#ログインしていない場合%> 
           <li class = "py-1 md:px-3 md:text-xl hover:underline hover:text-purple-700"><%= link_to("ユーザー登録", signup_path) %>
