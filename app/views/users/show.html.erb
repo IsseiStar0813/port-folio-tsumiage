@@ -18,17 +18,17 @@
         <%= date.day %>
           <div class = "flex justify-center">
             <% if !events.empty? %>
-              <p class = "text-purple-700 font-bold text-xl">積</p>
+              <p class = "text-purple-700 font-bold text-xl"><%= link_to "積", posts_path(created: date) %></p>
             <% end %>
           </div>
-        <% end %>
+      <% end %>
     </div>
 
     <div class = "md:ml-36">
       <h1 class = "text-xl mb-2 md:text-3xl">最近の投稿</h1>
       <div class = "md:mt-10">
         <% @posts.first(10).each do |post| %>
-          <p class = "my-1 md:text-xl md:my-4 hover:underline hover:text-purple-700"> <%= link_to(post.title, post_path(post.id), class: "link") %></p> 
+          <p class = "my-1 md:text-xl md:my-4 hover:underline hover:text-purple-700"> <%= link_to(post.title, post_path(post.id)) %></p> 
         <% end %>
       </div>
     </div>

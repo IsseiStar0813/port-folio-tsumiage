@@ -30,6 +30,11 @@ class PostsController < ApplicationController
     @post = current_user.posts.find_by(id: params[:id])
   end
 
+  def index
+    @posted_day = params[:created]
+    @posts = current_user.posts.where(created_at: @posted_day.in_time_zone.all_day)
+  end
+
   def update
     @post = current_user.posts.find_by(id: params[:id])
     if @post.update(post_params)
