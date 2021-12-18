@@ -1,9 +1,8 @@
 class PostsController < ApplicationController 
   before_action :logged_in_user
-  before_action :require_created_params, only: :index
 
   def new
-    @post = current_user.posts.build ーから
+    @post = current_user.posts.build 
   end
 
   def create 
@@ -73,13 +72,6 @@ class PostsController < ApplicationController
   private
     def post_params
       params.require(:post).permit(:content, :start_time, :title)
-    end
-
-    # beforeアクション
-    def require_created_params
-      unless params[:created]
-        redirect_to root_url
-      end
     end
   
 end
