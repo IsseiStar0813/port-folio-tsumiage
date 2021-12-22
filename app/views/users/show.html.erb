@@ -17,7 +17,7 @@
       <%= month_calendar events: @posts do |date,events| %>
         <%= date.day %>
           <div class = "flex justify-center">
-            <% if !events.empty? %>
+            <% unless events.empty? %>
               <p class = "text-purple-700 font-bold text-xl"><%= link_to "積", posts_path(created: date) %></p>
             <% end %>
           </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_152623) do
+ActiveRecord::Schema.define(version: 2021_12_22_161749) do
 
   create_table "calenders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "start_time"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 2021_11_22_152623) do
     t.string "title"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "schedules", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.string "task"
+    t.integer "hours"
+    t.bigint "user_id", null: false
+    t.datetime "start_time"
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -48,4 +59,5 @@ ActiveRecord::Schema.define(version: 2021_11_22_152623) do
 
   add_foreign_key "calenders", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "schedules", "users"
 end

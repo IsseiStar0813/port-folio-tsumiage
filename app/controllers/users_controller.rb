@@ -48,19 +48,6 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
 
-  
-
-  # beforeアクション
-
-    # 正しいユーザーか確認
-    def correct_user
-      @user = User.find(params[:id])
-      unless @user == current_user
-        flash[:red] = "自分以外の情報は確認できません"
-        redirect_to root_url
-      end
-    end
-
   private
 
     def user_params
