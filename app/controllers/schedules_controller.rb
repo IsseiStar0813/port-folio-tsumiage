@@ -13,9 +13,14 @@ class SchedulesController < ApplicationController
   def create 
     @schedule = current_user.schedules.build(schedule_params)
     if @schedule.save
-      redirect_to current_user
+      # 投稿成功
+      redirect_to schedule_path(current_user)
       flash[:green] = "予定を追加しました"
+    else
+      # 投稿失敗
+      render "new"
     end
+
   end
 
   private
