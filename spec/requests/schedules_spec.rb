@@ -15,15 +15,6 @@ RSpec.describe "Schedules_controller", type: :request do
     end
 
     context "ログインしている場合" do
-      context "他人のスケジュールページへのリクエスト" do
-        it "プロフィールページへリダイレクト" do
-          sign_in(other)
-          get schedule_path(user)
-          expect(flash).to be_present
-          expect(response).to redirect_to root_url
-        end
-      end
-
       context "自分のスケジュールページへのリクエスト" do
         it "スケジュールページを表示" do
           sign_in(user)
@@ -82,6 +73,31 @@ RSpec.describe "Schedules_controller", type: :request do
           expect(flash).to be_present
           expect(response).to redirect_to schedule_path(user)
         end
+      end
+    end
+  end
+
+  describe "index" do
+    context "ログインしていない場合" do
+      it "ログインページへリダイレクト" do
+        get schedules_path
+        expect(flash).to be_present
+        expect(response).to redirect_to login_url
+      end
+    end
+
+    context "ログインしている場合" do
+      before do
+        sign_in(user)
+      end
+      it "params[:created]が存在しない場合" do
+        get schedules_path
+        expect(response).to redirect_to user
+      end
+      it "params[:created]が存在する場合" do
+        get schedules_path(created: 20211208)
+        expect(response).to have_http_status "200"
+        expect(response).to render_template("index")
       end
     end
   end

@@ -74,12 +74,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:content, :start_time, :title)
     end
-
-    # beforeアクション
-    def require_created_params
-      unless params[:created]
-        redirect_to current_user
-      end
-    end
   
 end

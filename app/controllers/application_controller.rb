@@ -17,4 +17,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
+
+  # params [:created]を要求
+  def require_created_params
+    unless params[:created]
+      redirect_to current_user
+    end
+  end
 end

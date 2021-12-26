@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :logged_in_user
-  before_action :correct_user, only: :show
+  before_action :require_created_params, only: :index
+
 
   def show 
     @tasks = current_user.schedules.all
@@ -20,7 +21,11 @@ class SchedulesController < ApplicationController
       # 投稿失敗
       render "new"
     end
+  end
 
+  def index
+    @posted_day = params[:created]
+    @schedules = current_user.schedules.where(created_at: @posted_day.in_time_zone.all_day)
   end
 
   private

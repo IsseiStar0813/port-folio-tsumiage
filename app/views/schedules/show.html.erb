@@ -1,11 +1,13 @@
 <div> 
   <%= week_calendar(number_of_weeks: 1, events: @tasks) do |date,tasks| %>
-    <%= date %>
+
+    <%= link_to schedules_path(created: date) do %>
+      <%= date %>
+    <% end %>
 
     <% tasks.each do |task| %>
       <%= task.task %>
     <% end %>
-  <% end %>
 
-  
+  <% end %>
 </div>

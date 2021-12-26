@@ -1,0 +1,7 @@
+<div>
+  <% if @schedules %>
+    <% @schedules.each do |schedule| %>
+      <%= schedule.task %>
+    <% end %>
+  <% end %>
+</div>
