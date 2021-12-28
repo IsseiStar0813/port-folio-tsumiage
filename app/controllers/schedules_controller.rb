@@ -26,6 +26,7 @@ class SchedulesController < ApplicationController
   def index
     @posted_day = params[:created]
     @schedules = current_user.schedules.where(created_at: @posted_day.in_time_zone.all_day)
+    @schedule = current_user.schedules.build
   end
 
   private
