@@ -26,25 +26,6 @@ RSpec.describe "Schedules_controller", type: :request do
     end
   end
 
-  describe "#new" do
-    context "ログインしていない場合" do
-      it "ログインページへリダイレクト" do
-        get new_schedule_path
-        expect(flash).to be_present
-        expect(response).to redirect_to login_url
-      end
-    end
-
-    context "ログインしている場合" do
-      it "スケジュール作成ページを表示" do
-        sign_in(user)
-        get new_schedule_path
-        expect(response).to have_http_status "200"
-        expect(response).to render_template("new")
-      end
-    end
-  end
-
   describe "#create" do
     context "ログインしていない場合" do
       it "ログインページへリダイレクト" do
@@ -63,7 +44,7 @@ RSpec.describe "Schedules_controller", type: :request do
         it "タスクを作成せず、もう一度作成ページをレンダリング" do
           post schedules_path, params: {schedule: schedule_brank_task }
           expect(response).to render_template "shared/_error_message"
-          expect(response).to render_template "new"
+          expect(response).to render_template "index"
         end
       end
 

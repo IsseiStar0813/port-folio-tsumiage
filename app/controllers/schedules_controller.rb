@@ -7,10 +7,6 @@ class SchedulesController < ApplicationController
     @tasks = current_user.schedules.all
   end
 
-  def new
-    @schedule = current_user.schedules.build
-  end
-
   def create 
     @schedule = current_user.schedules.build(schedule_params)
     if @schedule.save
@@ -19,7 +15,7 @@ class SchedulesController < ApplicationController
       flash[:green] = "予定を追加しました"
     else
       # 投稿失敗
-      render "new"
+      render "index"
     end
   end
 
