@@ -1,10 +1,17 @@
-<div> 
+<div class = "mt-20"> 
   <%= week_calendar(number_of_weeks: 1, events: @tasks) do |date,tasks| %>
 
-    <div>
+    <div class = "hover:underline  hover:text-purple-700">
       <%= link_to schedules_path(created: date) do %>
-        <%= date %>
+        <%= date.strftime("%-m/%d") %>
       <% end %>
     </div>
+
+    <div>
+      <% unless tasks.empty? %>
+        予定あり
+      <% end %>
+    </div>
+
   <% end %>
 </div>
