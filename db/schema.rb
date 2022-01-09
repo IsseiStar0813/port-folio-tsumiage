@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_161749) do
+ActiveRecord::Schema.define(version: 2022_01_09_191655) do
 
   create_table "calenders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "start_time"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 2021_12_22_161749) do
     t.integer "hours"
     t.bigint "user_id", null: false
     t.datetime "start_time"
+    t.time "start"
+    t.time "finish"
+    t.date "work_at"
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 

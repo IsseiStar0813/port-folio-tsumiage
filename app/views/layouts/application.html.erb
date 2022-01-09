@@ -13,12 +13,11 @@
   </head>
 
   <body>
-    <div id = "app">
-      <header class = "container-fluid mx-auto  border-solid border-b-4 border-gray-700 px-2">
+    <header class = "container-fluid mx-auto  border-solid border-b-4 border-gray-700 px-2">
       <div class = "flex justify-between items-center">
         <h1 class = "text-3xl md:text-5xl hover:underline hover:text-purple-700"><%= link_to("TSUMIAGE", current_user) %></h1>
-        <div class = "md:hidden">
-          <button @click="isOpen = !isOpen">
+        <div>
+          <button class = "md:hidden" onclick="toggleHidden()">
             <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
             <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
             </svg>                       
@@ -26,7 +25,7 @@
         </div>
       </div>
     
-      <div :class="isOpen ? 'block' : 'hidden'" class = "md:block">
+      <div id = "humberger" class = "md:block hidden">
         <ul class = "md:flex md:justify-end">
           <%# ログイン中か否かで表示を変更する %>
           <% if logged_in? %>
@@ -44,23 +43,19 @@
           <% end %>
         </ul>
       </div>
-      </header>
+    </header>
 
       <%#フラッシュメッセージの表示 %>
       <%= render "shared/flash_message" %>
       <div class = "container-fluid mx-5 md:mx-28 ">
         <%= yield %>
       </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script>
-      const app = new Vue({
-        el : '#app',
-        data: {
-            isOpen: false,
-        }
-    })
+      const humburger = document.querySelector("#humberger");
+      function toggleHidden() {
+        humburger.classList.toggle("hidden");
+      };
     </script>
   </body>
 </html>

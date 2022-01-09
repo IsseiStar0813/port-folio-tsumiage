@@ -21,13 +21,13 @@ class SchedulesController < ApplicationController
 
   def index
     @posted_day = params[:created]
-    @schedules = current_user.schedules.where(created_at: @posted_day.in_time_zone.all_day)
+    @schedules = current_user.schedules.where(start_time: @posted_day.in_time_zone.all_day)
     @schedule = current_user.schedules.build
   end
 
   private
     def schedule_params
-      params.require(:schedule).permit(:task, :start_time, :hours)
+      params.require(:schedule).permit(:task, :start_time, :hours, :start, :finish, :work_at)
     end
 
 end
