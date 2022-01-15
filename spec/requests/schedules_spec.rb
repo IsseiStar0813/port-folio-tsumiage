@@ -48,13 +48,6 @@ RSpec.describe "Schedules_controller", type: :request do
         end
       end
 
-      context "正しい情報の場合" do
-        it "タスクを作成、スケジュールページへリダイレクト" do      
-          post schedules_path, params: {schedule: schedule }
-          expect(flash).to be_present
-          expect(response).to redirect_to schedule_path(user)
-        end
-      end
     end
   end
 
