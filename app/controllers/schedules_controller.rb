@@ -27,7 +27,7 @@ class SchedulesController < ApplicationController
 
   private
     def schedule_params
-      params.require(:schedule).permit(:task, :start_time, :hours, :start, :finish, :work_at)
+      params.require(:schedule).permit(:task, :start_time, :hours, :start, :finish, :total_hours, :total_minutes)
     end
 
 end
