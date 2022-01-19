@@ -15,7 +15,10 @@ class SchedulesController < ApplicationController
       flash[:green] = "予定を追加しました"
     else
       # 投稿失敗
-      render "index"
+      @posted_day = @schedule.start_time.strftime("%Y-%m-%d")
+      @schedules = current_user.schedules.where(start_time: @posted_day.in_time_zone.all_day)
+      @schedule = current_user.schedules.build
+      render action: :index
     end
   end
 

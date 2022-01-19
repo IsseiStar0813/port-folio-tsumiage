@@ -6,8 +6,8 @@
     <%= form_with(model: @schedule, local: true) do |f| %>
     <%= render "shared/error_message", object: f.object %>   
       <div class = "border-2 border-gray-400 ">
-        <%= f.time_select :start %> ~ <%= f.time_select :finish %>
-        <%= f.number_field :total_hours %>時間　<%= f.number_field :total_minutes %>分
+        開始時刻<%= f.time_field :start %> 終了時刻<%= f.time_field :finish %>
+        <%= f.number_field :total_hours %>時間 <%= f.number_field :total_minutes %>分
       </div>
       <div><%= f.text_field :task, class: "border-2 border-gray-400  py-1 mb-4 mt-4 w-full ", :placeholder => "取り組む内容" %></div>
       <%= f.hidden_field :start_time, :value => @posted_day %>
@@ -26,10 +26,6 @@
         </div>
       <% end %>
     <% end %>
-  </div>
-
-  <div class = "flex justify-end">
-    <p>合計 ○時間 ○分</p>
   </div>
   
   
