@@ -11,14 +11,14 @@ class SchedulesController < ApplicationController
     @schedule = current_user.schedules.build(schedule_params)
     if @schedule.save
       # 投稿成功
-      redirect_to request.referrer 
+      redirect_to request.referrer
       flash[:green] = "予定を追加しました"
     else
       # 投稿失敗
       @posted_day = @schedule.start_time.strftime("%Y-%m-%d")
       @schedules = current_user.schedules.where(start_time: @posted_day.in_time_zone.all_day)
       @schedule = current_user.schedules.build
-      render action: :index
+      render "index"
     end
   end
 
