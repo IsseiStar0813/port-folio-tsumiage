@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <p>質問一覧</P>
+    <% @questions.each do |question| %>
+      <div>
+        <%= question.title %>
+        <%= question.content %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to("質問する", new_question_path) %>
+  </div>
+</div>
