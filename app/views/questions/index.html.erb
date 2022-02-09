@@ -5,6 +5,13 @@
       <div>
         <%= question.title %>
         <%= question.content %>
+        <h2>回答</h2>
+        <ul>
+          <% (question.answers.all).each do |answer| %>
+            <li><%= answer.content %>
+          <% end %>
+        </ul>
+        <%= link_to("回答する", new_answer_path(question: question.id)) %>
       </div>
     <% end %>
   </div>

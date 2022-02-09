@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "/search", to: "posts#search"
   resources :schedules
   resources :questions
+  resources :answers
 end
