@@ -1,22 +1,29 @@
 <div>
-  <div>
-    <p>質問一覧</P>
+  <div class = "flex mt-10">
+    <%= link_to("質問する", new_question_path) %>
+    <%= link_to("My質問", my_questions_path) %>
+  </div>
+
+  <div class = "mt-10">
+    <h1>質問一覧</h1>
     <% @questions.each do |question| %>
-      <div>
-        <%= question.title %>
-        <%= question.content %>
-        <h2>回答</h2>
-        <ul>
+      <div class = "mt-10">
+        <div class = "border-solid border-t-4 border-gray-600">
+          <h1 class = "mt-4 mb-6 text-xl"><%= question.title %></h1>
+          <p><%= question.content %></p>
+          <P class = "flex justify-end"><%= link_to("回答する", new_answer_path(question: question.id)) %></p>
+        </div>
+
+        <P class = "border-t-4 border-dotted border-gray-400" @click = "isAnswerIndicate = !isAnswerIndicate">回答を表示/非表示</p>
+
+        <div :class = "isAnswerIndicate ? 'block' : 'hidden'">
           <% (question.answers.all).each do |answer| %>
-            <li><%= answer.content %>
+            <p><%= answer.content %></p>
           <% end %>
-        </ul>
-        <%= link_to("回答する", new_answer_path(question: question.id)) %>
+        </div>
       </div>
     <% end %>
   </div>
-  <div>
-    <%= link_to("質問する", new_question_path) %>
-  </div>
-  <%= link_to("My質問", my_questions_path) %>
+
+
 </div>

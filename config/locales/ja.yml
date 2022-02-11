@@ -10,3 +10,12 @@ ja:
       post:
         title: タイトル
         content: 投稿内容
+      
+      answer:
+        content: 回答
+      
+      question:
+        title: タイトル
+        content: 質問内容
+      
+
