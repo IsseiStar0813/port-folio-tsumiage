@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :schedules
   resources :questions
   resources :answers
+  get "/my_questions", to: "questions#my_questions"
 end

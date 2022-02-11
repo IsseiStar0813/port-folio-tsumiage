@@ -21,6 +21,10 @@ class QuestionsController < ApplicationController
     @questions = Question.all
   end
 
+  def my_questions
+    @my_questions = current_user.questions.all
+  end
+
   private
     def question_params
       params.require(:question).permit(:content, :title)
