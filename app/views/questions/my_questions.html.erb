@@ -1,10 +1,17 @@
-My質問
-<div>
-  <% @my_questions.each do |question| %>
-      <h1><%= question.title %></h1>
-      <p><%= question.content %></p>
-      <% (question.answers.all).each do |answer| %>
-        <p><%= answer.content %></p>
-      <% end %>
-  <% end %>
+<div class = "mt-10">  
+  <h1 class = "mb-6 text-2xl">My質問</h1>
+  <div>
+    <% @my_questions.each do |question| %>
+      <div  class = "border-solid border-t-4 border-gray-600">
+        <h1 class = "mt-4 mb-6 text-xl"><%= question.title %></h1>
+        <p><%= question.content %></p>
+      </div>
+      <div class = "pb-4">
+        <p class = "border-t-4 border-dotted border-gray-400">回答</p>
+          <% (question.answers.all).each do |answer| %>
+            <p><%= answer.content %></p>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

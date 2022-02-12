@@ -1,7 +1,7 @@
 <div>
   <div class = "flex mt-10">
-    <%= link_to("質問する", new_question_path) %>
-    <%= link_to("My質問", my_questions_path) %>
+    <p class = "mr-6"><%= link_to("My質問", my_questions_path) %></p>
+    <p><%= link_to("質問する", new_question_path) %></p>
   </div>
 
   <div class = "mt-10">
@@ -11,10 +11,10 @@
         <div class = "border-solid border-t-4 border-gray-600">
           <h1 class = "mt-4 mb-6 text-xl"><%= question.title %></h1>
           <p><%= question.content %></p>
-          <P class = "flex justify-end"><%= link_to("回答する", new_answer_path(question: question.id)) %></p>
+          <p class = "flex justify-end"><%= link_to("回答する", new_answer_path(question: question.id)) %></p>
         </div>
 
-        <P class = "border-t-4 border-dotted border-gray-400" @click = "isAnswerIndicate = !isAnswerIndicate">回答を表示/非表示</p>
+        <p class = "border-t-4 border-dotted border-gray-400" @click = "isAnswerIndicate = !isAnswerIndicate">回答を表示/非表示</p>
 
         <div :class = "isAnswerIndicate ? 'block' : 'hidden'">
           <% (question.answers.all).each do |answer| %>
