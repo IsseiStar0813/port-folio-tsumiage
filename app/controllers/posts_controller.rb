@@ -1,6 +1,6 @@
 class PostsController < ApplicationController 
   before_action :logged_in_user
-  before_action :require_created_params, only: :index
+  before_action :require_created_params, only: :index_of_the_day
 
   def new
     @post = current_user.posts.build 
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.find_by(id: params[:id])
   end
 
-  def index
+  def index_of_the_day
     @posted_day = params[:created]
     @posts = current_user.posts.where(created_at: @posted_day.in_time_zone.all_day)
   end
@@ -48,6 +48,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def index 
+    @posts = Post.all
+    if params[:keyword]
+      @search_posts = Post.search(params[:keyword])
+    end
+  end
+
   def destroy 
     @post = current_user.posts.find_by(id: params[:id])
     unless @post.nil?
@@ -59,14 +66,6 @@ class PostsController < ApplicationController
       # 削除失敗
       flash[:red] = "他人の投稿は削除できません"
       redirect_to root_url
-    end
-  end
-
-  # 検索機能
-  def search
-    if params[:keyword]
-      @search_posts = Post.search(params[:keyword])
-      @keyword = params[:keyword]
     end
   end
 

@@ -31,7 +31,7 @@
             <%#ログイン中 %>
               <li class = "py-1 lg:px-3 lg:text-xl hover:underline"><%= link_to("プロフィール", current_user) %>
               <li class = "py-1 lg:px-3 lg:text-xl hover:underline"><%= link_to("積み上げる", new_post_path) %>
-              <li class = "py-1 lg:px-3 lg:text-xl hover:underline"><%= link_to("検索", search_path ) %>
+              <li class = "py-1 lg:px-3 lg:text-xl hover:underline"><%= link_to("一覧", posts_path ) %>
               <li class = "py-1 lg:px-3 lg:text-xl hover:underline"><%= link_to("質問", questions_path) %>
               <li class = "py-1 lg:px-3 lg:text-xl hover:underline"><%= link_to("予定", schedule_path(current_user)) %>
               <li class = "py-1 lg:px-3 lg:text-xl hover:underline"><%= link_to("設定", edit_user_path(current_user)) %>

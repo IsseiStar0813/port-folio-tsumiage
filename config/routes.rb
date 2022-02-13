@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   resources :posts
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  get "/search", to: "posts#search"
   resources :schedules
   resources :questions
   resources :answers
   get "/my_questions", to: "questions#my_questions"
   post "/solve_question", to: "questions#question_solved"
+  get "/posts_of_the_day", to: "posts#index_of_the_day"
 end

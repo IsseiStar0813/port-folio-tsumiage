@@ -1,10 +1,31 @@
-<div class = "flex justify-center mt-12">
-  <div>
-    <p class = "text-2xl mb-12"><%= @posted_day %>　の投稿</p>
+<div class = "xl:mx-60 mt-20">
 
-    <% @posts.each do |post|%> 
-      <p class = "my-1 text-xl hover:underline hover:text-purple-700"> <%= link_to(post.title, post_path(post.id)) %></p> 
+  <div class = "mb-8">
+    <%= form_with url: posts_path, method: :get, local: true, class: "flex justify-between" do |f| %>
+      <%= f.text_field :keyword, value: @keyword, class: "border-2 border-gray-400 w-full mr-6 ", :placeholder => "キーワードを入力してください" %>
+      <%= f.submit "検索", class: "hover:bg-gray-700 hover:text-white bg-white border-solid border-gray-400 border-2 font-bold py-2 px-4 rounded md:text-2xl md:w-40" %>
+    <% end %>
+  </div>
+
+  <div class = "md:mx-10">
+    <% if @search_posts %>
+      <% @search_posts.each do |post| %>
+        <%= link_to (post_path(post.id)) do %>
+          <div class = "border-b-2 border-gray-400 mb-2 md:mb-8 hover:text-purple-700">
+            <p class = "text-lg hover:underline"><%= post.title %></p>
+            <p class = "text-right"><%= japanese_time(post.created_at) %></p>
+          </div>
+        <% end %>
+      <% end %>
+    <% else %>
+      <% @posts.each do |post| %>
+        <%= link_to (post_path(post.id)) do %>
+          <div class = "border-b-2 border-gray-400 mb-2 md:mb-8 hover:text-purple-700">
+            <p class = "text-lg hover:underline"><%= post.title %></p>
+            <p class = "text-right"><%= japanese_time(post.created_at) %></p>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
-

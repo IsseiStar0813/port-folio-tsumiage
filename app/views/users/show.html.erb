@@ -26,7 +26,7 @@
         <%= date.day %>
           <div class = "flex justify-center">
             <% unless events.empty? %>
-              <p class = "text-black-700 font-bold text-xl"><%= link_to "積", posts_path(created: date) %></p>
+              <p class = "text-black-700 font-bold text-xl"><%= link_to "積", posts_of_the_day_path(created: date) %></p>
             <% end %>
           </div>
       <% end %>
