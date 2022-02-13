@@ -1,19 +1,14 @@
-  <div class = "my-6 border-b-4 border-gray-400">
-    <h1 class = "text-xl md:text-5xl md:mb-5"><%= @user.name %></h1>
-    <ul class = "flex items-center pb-2">
+<div>
+  <div class = "md:mt-12 mt-6 border-b-4 border-gray-400">
+    <ul class = "flex justify-end items-center">
+      <li class = "text-xl md:text-5xl md:mb-4 mr-8"><%= @user.name %></li>
       <li class = "pr-2 md:text-2xl"><%= @user.posts.count %>積み上げ</li>
       <li class = "md:text-2xl"><%= @user.tsumiage_count %>日継続</li>
-      <li class = "ml-auto mr-0"> <%= link_to new_post_path do %>
-        <button class = "bg-transparent md:hover:bg-purple-600 text-purple-700 font-semibold md:hover:text-white py-2 px-4
-         border-2 border-purple-600 md:hover:border-transparent rounded md:text-2xl md:w-60">積み上げる</button>
-         <% end %></li>
     </ul>
   </div>
 
   <div class = "md:flex md:mt-10">
-
     <div class = "mb-4 lg:w-2/5 lg:mx-16">
-      
       <%= month_calendar events: @posts do |date,events| %>
         <%= date.day %>
           <div class = "flex justify-center">
@@ -32,9 +27,8 @@
         <% end %>
       </div>
     </div>
-
   </div>
-
+</div>
   
 
 
