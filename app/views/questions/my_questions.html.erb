@@ -3,12 +3,13 @@
   <div>
     <% @my_questions.each do |question| %>
       <div  class = "border-solid border-t-4 border-gray-600">
-        <h1 class = "mt-4 mb-6 text-xl"><%= question.title %></h1>
+        <h1 class = "mt-4 mb-6 text-xl"><%= question.title %>
         <% unless question.solved %>
           <span><%= button_to "解決", solve_question_path(question: question), method: :post%></span>
         <% else %>
-          <span>解決済み</span>
+          <span>(解決済み)</span>
         <% end %>
+        </h1>
         <p><%= question.content %></p>
       </div>
       <div class = "pb-4">

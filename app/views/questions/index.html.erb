@@ -9,12 +9,13 @@
     <% @questions.each do |question| %>
       <div class = "mt-10">
         <div class = "border-solid border-t-4 border-gray-600">
-          <h1 class = "mt-4 mb-6 text-xl"><%= question.title %></h1>
+          <h1 class = "mt-4 mb-6 text-xl"><%= question.title %>
           <% if question.solved %>
-            <span>解決済み</span>
+            <span>(解決済み)</span>
           <% else %>
-            <span>未解決</span>
+            <span>(未解決)</span>
           <% end %>
+          </h1>
           <p><%= question.content %></p>
           <p class = "flex justify-end"><%= link_to("回答する", new_answer_path(question: question.id)) %></p>
         </div>
