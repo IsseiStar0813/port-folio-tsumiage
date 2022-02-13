@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def show 
     @user = User.find(params[:id])
     @posts = @user.posts
+    @post = current_user.posts.build
   end
 
   def create

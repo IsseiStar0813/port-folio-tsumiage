@@ -1,31 +1,35 @@
 <div>
-  <div class = "md:mt-12 mt-6 border-b-4 border-gray-400">
+  <%# ユーザー情報 %>
+  <div class = "lg:mt-12 mt-6 border-b-4 border-gray-400">
     <ul class = "flex justify-end items-center">
-      <li class = "text-xl md:text-5xl md:mb-4 mr-8"><%= @user.name %></li>
-      <li class = "pr-2 md:text-2xl"><%= @user.posts.count %>積み上げ</li>
-      <li class = "md:text-2xl"><%= @user.tsumiage_count %>日継続</li>
+      <li class = "text-xl lg:text-5xl lg:mb-4 mr-8"><%= @user.name %></li>
+      <li class = "pr-2 lg:text-2xl"><%= @user.posts.count %>積み上げ</li>
+      <li class = "lg:text-2xl"><%= @user.tsumiage_count %>日継続</li>
     </ul>
   </div>
-
-  <div class = "md:flex md:mt-10">
-    <div class = "mb-4 lg:w-2/5 lg:mx-16">
+  <div class = "lg:flex justify-between mt-10">
+    <%# 積み上げ投稿フォーム%>
+    <div class = "lg:w-1/2 mb-10">
+      <h1 class = "text-2xl mb-8">積み上げ</h1>
+      <%= form_with(model: @post, local: true) do |f| %>
+        <%= render "shared/error_message", object: f.object %>   
+        <%= f.text_field :title, class: "border-2 border-gray-400 w-full py-1", :placeholder => "タイトルを入力してください" %>
+        <%= f.text_area :content,class: "border-2 border-gray-400 w-full h-56 my-4 xl:h-80", :placeholder => "学習内容等、自由に記述してください" %>
+        <%= f.hidden_field :start_time, :value => Date.today %>
+        <%= f.submit "投稿", class: "hover:bg-gray-700 hover:text-white bg-white border-solid border-gray-400 border-2 font-bold py-2 px-4 rounded lg:text-2xl w-full" %>
+      <% end %>
+    </div>
+    <%# 学習カレンダー %>
+    <div class = "lg:w-2/5">
+      <h1 class = "text-2xl mb-4">学習カレンダー</h1>
       <%= month_calendar events: @posts do |date,events| %>
         <%= date.day %>
           <div class = "flex justify-center">
             <% unless events.empty? %>
-              <p class = "text-purple-700 font-bold text-xl"><%= link_to "積", posts_path(created: date) %></p>
+              <p class = "text-black-700 font-bold text-xl"><%= link_to "積", posts_path(created: date) %></p>
             <% end %>
           </div>
       <% end %>
-    </div>
-
-    <div class = "md:ml-36">
-      <h1 class = "text-xl mb-2 md:text-3xl">最近の投稿</h1>
-      <div class = "md:mt-10">
-        <% @posts.first(10).each do |post| %>
-          <p class = "my-1 md:text-xl md:my-4 hover:underline hover:text-purple-700"> <%= link_to(post.title, post_path(post.id)) %></p> 
-        <% end %>
-      </div>
     </div>
   </div>
 </div>
