@@ -4,12 +4,17 @@
     <% @my_questions.each do |question| %>
       <div  class = "border-solid border-t-4 border-gray-600">
         <h1 class = "mt-4 mb-6 text-xl"><%= question.title %></h1>
+        <% unless question.solved %>
+          <span><%= button_to "解決", solve_question_path(question: question), method: :post%></span>
+        <% else %>
+          <span>解決済み</span>
+        <% end %>
         <p><%= question.content %></p>
       </div>
       <div class = "pb-4">
         <p class = "border-t-4 border-dotted border-gray-400">回答</p>
           <% (question.answers.all).each do |answer| %>
-            <p><%= answer.content %></p>
+            <p class = "my-4 border-b-2 borders-solid border-gray-300"><%= answer.content %></p>
           <% end %>
       </div>
     <% end %>

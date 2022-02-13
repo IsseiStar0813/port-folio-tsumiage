@@ -25,6 +25,15 @@ class QuestionsController < ApplicationController
     @my_questions = current_user.questions.all
   end
 
+  def question_solved 
+    @question = current_user.questions.find(params[:question])
+    unless @question.solved
+      @question.update(solved: true)
+      redirect_to request.referrer
+    end
+
+  end
+
   private
     def question_params
       params.require(:question).permit(:content, :title)

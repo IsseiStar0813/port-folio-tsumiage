@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :questions
   resources :answers
   get "/my_questions", to: "questions#my_questions"
+  post "/solve_question", to: "questions#question_solved"
 end
