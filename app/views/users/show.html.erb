@@ -1,10 +1,10 @@
 <div>
   <%# ユーザー情報 %>
-  <div class = "lg:mt-12 mt-6 border-b-4 border-gray-400">
+  <div class = "mt-10 border-b-4 border-gray-400">
     <ul class = "flex justify-end items-center">
-      <li class = "text-xl lg:text-5xl lg:mb-4 mr-8"><%= @user.name %></li>
-      <li class = "pr-2 lg:text-2xl"><%= @user.posts.count %>積み上げ</li>
-      <li class = "lg:text-2xl"><%= @user.tsumiage_count %>日継続</li>
+      <li class = "text-4xl mr-4 pb-2"><%= @user.name %></li>
+      <li class = "pr-2 text-2xl"><%= @user.posts.count %>積み上げ</li>
+      <li class = "text-2xl"><%= @user.tsumiage_count %>日継続</li>
     </ul>
   </div>
   <div class = "lg:flex justify-between mt-10">
