@@ -1,19 +1,20 @@
 <div class = "mt-10">  
-  <h1 class = "mb-6 text-2xl">My質問</h1>
+  <h1 class = "text-2xl mb-8">My質問</h1>
   <div>
     <% @my_questions.each do |question| %>
-      <div  class = "border-solid border-t-4 border-gray-600">
+      <div  class = "border-solid border-t-4 border-gray-600 mb-6">
         <h1 class = "mt-4 mb-6 text-xl"><%= question.title %>
         <% unless question.solved %>
-          <span><%= button_to "解決", solve_question_path(question: question), method: :post%></span>
+          <button><%= button_to "解決済みにする", solve_question_path(question: question), method: :post%></button>
         <% else %>
           <span>(解決済み)</span>
         <% end %>
+        <span class = "text-lg text-gray-500 ml-6"><%= japanese_time(question.created_at) %></span>
         </h1>
         <p><%= question.content %></p>
       </div>
       <div class = "pb-4">
-        <p class = "border-t-4 border-dotted border-gray-400">回答</p>
+        <p class = "border-t-4 border-dotted border-gray-400 pt-4">回答</p>
           <% (question.answers.all).each do |answer| %>
             <p class = "my-4 border-b-2 borders-solid border-gray-300"><%= answer.content %></p>
           <% end %>
