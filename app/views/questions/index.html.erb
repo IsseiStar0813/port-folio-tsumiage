@@ -1,29 +1,32 @@
 <div>
   <div class = "flex mt-10  text-xl">
-    <p class = "mr-6"><%= link_to("My質問", my_questions_path) %></p>
-    <p><%= link_to("質問する", new_question_path) %></p>
+    <p class = "mr-6 hover:underline"><%= link_to("My質問", my_questions_path) %></p>
+    <p class = "hover:underline"><%= link_to("質問する", new_question_path) %></p>
   </div>
 
   <div class = "mt-10">
     <h1 class = "text-2xl">質問一覧</h1>
     <% @questions.each do |question| %>
       <div class = "mt-10">
-        <div class = "border-solid border-t-4 border-gray-600">
+        <div class = "border-solid border-t-4 border-gray-600 mb-6">
           <h1 class = "mt-4 mb-6 text-xl"><%= question.title %>
           <% if question.solved %>
             <span>(解決済み)</span>
           <% else %>
-            <span>(未解決)</span>
+            <span class = "text-red-500">(未解決)</span>
           <% end %>
+            <span class = "text-lg text-gray-500 ml-6"><%= japanese_time(question.created_at) %></span>
           </h1>
           <p><%= question.content %></p>
-          <p class = "flex justify-end"><%= link_to("回答する", new_answer_path(question: question.id)) %></p>
+          <% unless question.solved %>
+            <p class = "flex justify-end hover:underline"><%= link_to("回答する", new_answer_path(question: question.id)) %></p>
+          <% end %>
         </div>
 
         <div>
-          <h1 class = "border-t-4 border-dotted border-gray-400">回答</h1>
+          <h1 class = "border-t-4 border-dotted border-gray-400 pt-4">回答</h1>
           <% (question.answers.all).each do |answer| %>
-            <p class = "my-4 border-b-2 borders-solid border-gray-500"><%= answer.content %></p>
+            <p class = "my-4 border-b-2 borders-solid border-gray-500 pb-4"><%= answer.content %></p>
           <% end %>
         </div>
       </div>
