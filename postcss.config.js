@@ -4,6 +4,7 @@ module.exports ={
     require('autoprefixer'),
     require('postcss-import'),
     require('postcss-flexbugs-fixes'),
+    require('cssnano'),
     require('postcss-preset-env')({
       autoprefixer: {
         flexbox: 'no-2009'
