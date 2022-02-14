@@ -12,7 +12,7 @@
 - レスポンシブ対応
 
 ## トップページ
-<img width="1440" alt="スクリーンショット 2022-02-14 13 07 46" src="https://user-images.githubusercontent.com/86590180/153799813-7cea0993-070d-48eb-9c46-a6f4ab8bfa60.png">
+<img width="1309" alt="スクリーンショット 2022-02-14 14 09 58" src="https://user-images.githubusercontent.com/86590180/153803783-22e94dc9-17fb-46c5-80a6-95aa381fadaa.png">
 
 ## 学習スケジュール機能
 
