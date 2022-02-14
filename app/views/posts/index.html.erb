@@ -11,7 +11,7 @@
     <% if @search_posts %>
       <% @search_posts.each do |post| %>
         <%= link_to (post_path(post.id)) do %>
-          <div class = "border-b-2 border-gray-400 mb-2 md:mb-8 hover:text-purple-700">
+          <div class = "border-b-2 border-gray-400 mb-2 md:mb-8">
             <p class = "text-lg hover:underline"><%= post.title %></p>
             <p class = "text-right"><%= japanese_time(post.created_at) %></p>
           </div>
@@ -20,7 +20,7 @@
     <% else %>
       <% @posts.each do |post| %>
         <%= link_to (post_path(post.id)) do %>
-          <div class = "border-b-2 border-gray-400 mb-2 md:mb-8 hover:text-purple-700">
+          <div class = "border-b-2 border-gray-400 mb-2 md:mb-8">
             <p class = "text-lg hover:underline"><%= post.title %></p>
             <p class = "text-right"><%= japanese_time(post.created_at) %></p>
           </div>
