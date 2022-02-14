@@ -21,7 +21,11 @@
 <img width="857" alt="スクリーンショット 2022-02-14 13 13 00" src="https://user-images.githubusercontent.com/86590180/153799260-651fa7a3-ccdd-4e14-bcc4-080a6e47a738.png">
 
 ## 質問機能
-<img width="1335" alt="スクリーンショット 2022-02-14 13 12 18" src="https://user-images.githubusercontent.com/86590180/153799279-320631cb-c72b-492c-9d30-390f33ededd0.png">
+<img width="883" alt="スクリーンショット 2022-02-14 14 04 56" src="https://user-images.githubusercontent.com/86590180/153803349-cfa93687-b41d-4c92-8d2d-f8157f3a8899.png">
+
+<img width="1321" alt="スクリーンショット 2022-02-14 14 04 44" src="https://user-images.githubusercontent.com/86590180/153803359-6a13d5af-0977-4354-8924-acb88b7e07c5.png">
+
+
 
 
 

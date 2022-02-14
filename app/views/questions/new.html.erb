@@ -1,6 +1,6 @@
 
 <div class = "mt-10 xl:mx-60">
-  <h1 class = "text-2xl mb-8">質問する</h1>
+  <h1 class = "text-2xl mb-8">質問する　プログラミングに関連することならなんでもOK!</h1>
   <%= form_with(model: @question, local: true) do |f| %>
     <%= render "shared/error_message", object: f.object %>   
     <%= f.text_field :title, class: "border-2 border-gray-400 w-full py-1", :placeholder => "タイトルを入力してください" %>
