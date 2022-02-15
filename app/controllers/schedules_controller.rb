@@ -28,9 +28,17 @@ class SchedulesController < ApplicationController
     @schedule = current_user.schedules.build
   end
 
+  def schedule_achieved
+    @schedule = current_user.schedules.find(params[:schedule])
+    unless @schedule.achieved
+      @schedule.update(achieved: true)
+      redirect_to current_user
+    end
+  end
+
   private
     def schedule_params
-      params.require(:schedule).permit(:task, :start_time, :hours, :start, :finish, :total_hours, :total_minutes)
+      params.require(:schedule).permit(:task, :start_time, :hours, :start, :finish, :total_hours, :total_minutes, :actual_hours, :actual_minutes)
     end
 
 end

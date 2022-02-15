@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get "/my_questions", to: "questions#my_questions"
   post "/solve_question", to: "questions#question_solved"
   get "/posts_of_the_day", to: "posts#index_of_the_day"
+  post "achieve_schedule", to: "schedules#schedule_achieved"
 end

@@ -5,6 +5,7 @@
       <li class = "text-4xl mr-4 pb-2"><%= @user.name %></li>
       <li class = "pr-2 text-2xl"><%= @user.posts.count %>積み上げ</li>
       <li class = "text-2xl"><%= @user.tsumiage_count %>日継続</li>
+      <li class = "text-2xl"><%= @user.total_times %></li>
     </ul>
   </div>
 
@@ -27,17 +28,22 @@
       </div>
 
       <%# 予定一覧 %>
-      <div class = "mt-12"> 
+      <div class = "mt-12">
         <% if @schedules %>
           <% @schedules.each do |schedule| %>
             <div class = "text-lg mb-4 flex lg:text-xl">
-              <p class = "mr-4 lg:mr-12"><%= schedule.start.strftime("%-H:%M") %> ~ <%= schedule.finish.strftime("%-H:%M") %></p>
-              <span><%= schedule.total_hours %>時間 <%= schedule.total_minutes %>分</span>
-              <p><%= schedule.task %></p>
+            <% unless schedule.achieved %>
+              <span class = "mr-4 lg:mr-12"><%= schedule.start.strftime("%-H:%M") %> ~ <%= schedule.finish.strftime("%-H:%M") %></span>
+              <span class = "mr-4"><%= schedule.total_hours %>時間 <%= schedule.total_minutes %>分</span>
+              <span><%= schedule.task %></span>
+                <button class = "ml-6"><%= button_to "達成", achieve_schedule_path(schedule: schedule), method: :post %></button>
+              <% end %>
             </div>
           <% end %>
         <% end %>
-        <p class = "text-xl pt-6">合計　<%= @total_hours %>時間　<%= @total_minutes %>分</p>
+        <div>
+          <p class = "text-xl pt-6">目標　<%= @total_hours %>時間　<%= @total_minutes %>分</p>
+        </div>
       </div>
     </div>
 
