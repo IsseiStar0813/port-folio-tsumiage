@@ -9,7 +9,15 @@ class UsersController < ApplicationController
   def show 
     @user = User.find(current_user.id)
     @posts = @user.posts
-    @post = current_user.posts.build
+    @today =  Date.current
+    @schedules = current_user.schedules.where(start_time: @today.in_time_zone.all_day)
+    @schedule = current_user.schedules.build
+    @total = 0
+    @schedules.each do |schedule|
+      @total += (schedule.total_hours * 60) + schedule.total_minutes
+    end
+    @total_hours = @total / 60
+    @total_minutes = @total % 60
   end
 
   def create

@@ -7,18 +7,40 @@
       <li class = "text-2xl"><%= @user.tsumiage_count %>日継続</li>
     </ul>
   </div>
-  <div class = "lg:flex justify-between mt-10">
-    <%# 積み上げ投稿フォーム%>
-    <div class = "lg:w-1/2 mb-10">
-      <h1 class = "text-2xl mb-8">積み上げ</h1>
-      <%= form_with(model: @post, local: true) do |f| %>
-        <%= render "shared/error_message", object: f.object %>   
-        <%= f.text_field :title, class: "border-2 border-gray-400 w-full py-1", :placeholder => "タイトルを入力してください" %>
-        <%= f.text_area :content,class: "border-2 border-gray-400 w-full h-56 my-4 xl:h-80", :placeholder => "学習内容等、自由に記述してください(Markdown記法が使えます)" %>
-        <%= f.hidden_field :start_time, :value => Date.today %>
-        <%= f.submit "投稿", class: "hover:bg-gray-700 hover:text-white bg-white border-solid border-gray-400 border-2 font-bold py-2 px-4 rounded lg:text-2xl w-full" %>
-      <% end %>
+
+  <div class = "lg:flex mt-10">
+    <%# 予定機能 %>
+    <div>
+      <%# 予定投稿フォーム%>
+      <div class = "lg:w-4/5">
+        <p class = "text-2xl mb-6"><%= @today %></p>
+        <%= form_with(model: @schedule, local: true) do |f| %>
+          <%= render "shared/error_message", object: f.object %>   
+          <div class = "border-2 border-gray-400 ">
+            開始時刻<%= f.time_field :start%> 終了時刻<%= f.time_field :finish%>
+            <%= f.number_field :total_hours, class: "w-1/6" %>時間　<%= f.number_field :total_minutes, class: "w-1/6" %>分
+          </div>
+          <div><%= f.text_field :task, class: "border-2 border-gray-400  py-1 mb-4 mt-4 w-full ", :placeholder => "取り組む内容" %></div>
+          <%= f.hidden_field :start_time, :value => @today %>
+          <div><%= f.submit "予定を追加", class: "hover:bg-gray-700 hover:text-white bg-white border-solid border-gray-400 border-2 font-bold py-2 px-4 rounded md:text-2xl w-full " %></div>
+        <% end %>
+      </div>
+
+      <%# 予定一覧 %>
+      <div class = "mt-12"> 
+        <% if @schedules %>
+          <% @schedules.each do |schedule| %>
+            <div class = "text-lg mb-4 flex lg:text-xl">
+              <p class = "mr-4 lg:mr-12"><%= schedule.start.strftime("%-H:%M") %> ~ <%= schedule.finish.strftime("%-H:%M") %></p>
+              <span><%= schedule.total_hours %>時間 <%= schedule.total_minutes %>分</span>
+              <p><%= schedule.task %></p>
+            </div>
+          <% end %>
+        <% end %>
+        <p class = "text-xl pt-6">合計　<%= @total_hours %>時間　<%= @total_minutes %>分</p>
+      </div>
     </div>
+
     <%# 学習カレンダー %>
     <div class = "lg:w-2/5">
       <h1 class = "text-2xl mb-4">学習カレンダー</h1>
