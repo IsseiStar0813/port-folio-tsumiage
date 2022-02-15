@@ -18,13 +18,24 @@ class UsersController < ApplicationController
     end
     @total_hours = @total / 60
     @total_minutes = @total % 60
-    @achieved_schedules = current_user.schedules.where(achieved: true)
+    @achieved_schedules = current_user.schedules.where(start_time: @today.in_time_zone.all_day, achieved: true)
     @actual_total = 0
     @achieved_schedules.each do |schedule|
       @actual_total += (schedule.total_hours * 60) + schedule.total_minutes
     end
     @actual_total_hours = @actual_total /60
     @actual_total_minutes = @actual_total % 60
+    @whole_schedules = current_user.schedules.where(achieved: true)
+    @whole_total = 0
+    @whole_schedules.each do |schedule|
+      if schedule.total_hours || schedule.total_minutes
+        @whole_total += (schedule.total_hours * 60) + schedule.total_minutes
+      end
+    end
+    @whole_total_hours = @whole_total /60
+    @whole_total_minutes = @whole_total % 60
+   
+
   end
 
   def create
