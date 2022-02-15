@@ -41,8 +41,9 @@
             </div>
           <% end %>
         <% end %>
-        <div>
-          <p class = "text-xl pt-6">目標　<%= @total_hours %>時間　<%= @total_minutes %>分</p>
+        <div class = "text-xl">
+          <p class = "pt-6">目標　<%= @total_hours %>時間　<%= @total_minutes %>分</p>
+          <p>達成　<%= @actual_total_hours %>時間　<%= @actual_total_minutes %>分
         </div>
       </div>
     </div>
