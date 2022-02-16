@@ -6,13 +6,20 @@
 - ユーザー登録、ログイン
 - 学習内容の投稿(Markdown記法対応)
 - 過去の学習内容の確認,検索
-- 努力の積み上がりの可視化(学習カレンダー、継続日数の表示)
+- 努力の積み上がりの可視化(学習カレンダー、継続日数、総学習時間の表示)
 - 学習スケジュール作成
 - わからないことをタイムラインで質問、回答
 - レスポンシブ対応
 
 ## トップページ
-<img width="1309" alt="スクリーンショット 2022-02-14 14 09 58" src="https://user-images.githubusercontent.com/86590180/153803783-22e94dc9-17fb-46c5-80a6-95aa381fadaa.png">
+<img width="1309" alt="スクリーンショット 2022-02-14 14 09 58" src="https://user-images.githubusercontent.com/86590180/154240210-ebc674a8-3736-48be-921a-c02ee2f1a2fe.png">
+
+## 投稿機能
+<img width="853" alt="スクリーンショット 2022-02-16 18 53 22" src="https://user-images.githubusercontent.com/86590180/154240382-b80295c3-d56e-4e22-8ca5-e8e0b3605553.png">
+
+投稿の一覧表示
+<img width="853" alt="スクリーンショット 2022-02-16 18 53 22" src="https://user-images.githubusercontent.com/86590180/154240382-b80295c3-d56e-4e22-8ca5-e8e0b3605553.png">
+
 
 ## 学習スケジュール機能
 
