@@ -12,13 +12,14 @@
 - レスポンシブ対応
 
 ## トップページ
-<img width="1309" alt="スクリーンショット 2022-02-14 14 09 58" src="https://user-images.githubusercontent.com/86590180/154240210-ebc674a8-3736-48be-921a-c02ee2f1a2fe.png">
+<img width="1289" alt="スクリーンショット 2022-02-16 18 53 08" src="https://user-images.githubusercontent.com/86590180/154241369-ddddece1-b095-4ceb-b53e-5407cd018b0a.png">
+
 
 ## 投稿機能
-<img width="853" alt="スクリーンショット 2022-02-16 18 53 22" src="https://user-images.githubusercontent.com/86590180/154240382-b80295c3-d56e-4e22-8ca5-e8e0b3605553.png">
+<img width="853" alt="スクリーンショット 2022-02-16 18 53 22" src="https://user-images.githubusercontent.com/86590180/154241592-993d09ae-42de-497b-96c5-89257e0ddd1a.png">
 
-投稿の一覧表示
-<img width="853" alt="スクリーンショット 2022-02-16 18 53 22" src="https://user-images.githubusercontent.com/86590180/154240382-b80295c3-d56e-4e22-8ca5-e8e0b3605553.png">
+一覧表示機能(検索機能付き)
+<img width="949" alt="スクリーンショット 2022-02-16 18 59 59" src="https://user-images.githubusercontent.com/86590180/154241613-143837a7-932a-4266-aba9-837e99926fe3.png">
 
 
 ## 学習スケジュール機能
