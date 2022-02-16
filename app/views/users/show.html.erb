@@ -9,11 +9,11 @@
     </ul>
   </div>
 
-  <div class = "lg:flex mt-10">
+  <div class = "md:flex mt-10">
     <%# 予定機能 %>
     <div>
       <%# 予定投稿フォーム%>
-      <div class = "lg:w-4/5">
+      <div class = "md:w-4/5">
         <p class = "text-2xl mb-6"><%= @today %></p>
         <%= form_with(model: @schedule, local: true) do |f| %>
           <%= render "shared/error_message", object: f.object %>   
@@ -31,9 +31,9 @@
       <div class = "mt-12">
         <% if @schedules %>
           <% @schedules.each do |schedule| %>
-            <div class = "text-lg mb-4 flex lg:text-xl">
+            <div class = "text-lg mb-4 flex md:text-xl">
             <% unless schedule.achieved %>
-              <span class = "mr-4 lg:mr-12"><%= schedule.start.strftime("%-H:%M") %> ~ <%= schedule.finish.strftime("%-H:%M") %></span>
+              <span class = "mr-4 md:mr-12"><%= schedule.start.strftime("%-H:%M") %> ~ <%= schedule.finish.strftime("%-H:%M") %></span>
               <span class = "mr-4"><%= schedule.total_hours %>時間 <%= schedule.total_minutes %>分</span>
               <span><%= schedule.task %></span>
               <button class = "ml-6"><%= button_to "達成", achieve_schedule_path(schedule: schedule), method: :post %></button>
@@ -49,7 +49,7 @@
     </div>
 
     <%# 学習カレンダー %>
-    <div class = "lg:w-2/5">
+    <div class = "md:w-2/5">
       <h1 class = "text-2xl mb-4">学習カレンダー</h1>
       <%= month_calendar events: @posts do |date,events| %>
         <%= date.day %>
