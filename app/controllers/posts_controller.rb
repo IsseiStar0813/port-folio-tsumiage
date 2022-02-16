@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   def index 
-    @posts = Post.all
+    @posts = current_user.posts.all
     if params[:keyword]
       @search_posts = Post.search(params[:keyword])
     end
