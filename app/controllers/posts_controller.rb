@@ -1,6 +1,6 @@
 class PostsController < ApplicationController 
   before_action :logged_in_user
-  before_action :require_created_params, only: [:index_of_the_day, :index]
+  before_action :require_created_params, only: [:index_of_the_day]
 
   def new
     @post = current_user.posts.build 
