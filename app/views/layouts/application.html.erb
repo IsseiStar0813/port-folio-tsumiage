@@ -16,7 +16,11 @@
     <div id = "app">
       <header class = "container-fluid mx-auto mt-6 px-6 lg:px-16 lg:flex justify-between">
         <div class = "flex justify-between items-center">
-          <h1 class = "text-4xl hover:underline "><%= link_to("TSUMIAGE", current_user) %></h1>
+          <% if current_user %>
+            <h1 class = "text-4xl hover:underline "><%= link_to("TSUMIAGE", current_user) %></h1>
+          <% else %>
+            <h1 class = "text-4xl hover:underline "><%= link_to("TSUMIAGE", root_path) %></h1>
+          <% end %>
           <button class = "md:hidden" @click="isOpen = !isOpen">
             <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
             <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
