@@ -1,6 +1,6 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view, class:"hover:underline mr-4  hover:text-purple-700" %>
+    <%= link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view, class:"hover:underline mr-4" %>
     <%
 =begin%>
  <% if calendar.number_of_weeks == 1 %>
@@ -10,7 +10,7 @@
       <% end %>  
 <%
 =end%>
-    <%= link_to t('simple_calendar.next', default: '次週'), calendar.url_for_next_view, class:"hover:underline  hover:text-purple-700" %>
+    <%= link_to t('simple_calendar.next', default: '次週'), calendar.url_for_next_view, class:"hover:underline" %>
   </div>
 
   <table class="table table-striped">
