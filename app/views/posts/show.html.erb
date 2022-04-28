@@ -1,9 +1,11 @@
 <div class = "mt-10 xl:mx-60">
 
   <div class = "border-b-2 border-gray-600 pb-2">
-    <div class = "text-xl pb-2 border-b-2 border-gray-600 md:text-2xl"><%= @post.title %></div>
-    <div><%=markdown(@post.content)%></div>   
-    <p class = "text-gray-500 pt-4"><%= japanese_time(@post.created_at) %></p>
+    <h1 class = "text-xl pb-2 border-b-2 border-gray-600 md:text-4xl"><%= @post.title %></h1>
+    <div class = "mx-12 pt-10">
+      <div class = "markdown-body"><%=markdown(@post.content)%></div>   
+      <p class = "text-gray-500 pt-10 flex justify-end"><%= japanese_time(@post.created_at) %></p>
+    <div>
   </div>
 
   <div class = "flex justify-between mt-16 mx-4 mb-10">
