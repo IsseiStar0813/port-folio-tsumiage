@@ -9,13 +9,15 @@
   </div>
 
   <div class = "flex justify-end mt-10 mb-4">
-    <%= link_to(post_path, method: :delete) do %>
-      <p class = "mr-4 hover:underline">削除</p>
+
+    <%= button_to(edit_post_path(@post.id)) do %>
+      <p class = "mr-4 hover:underline">編集</p>
     <% end %>
 
-    <%= link_to(edit_post_path(@post.id)) do %>
-      <p class = "hover:underline">編集</p>
+    <%= button_to(post_path, method: :delete) do %>
+      <p class = "hover:underline">削除</p>
     <% end %>
+
   </div>
 
 </div>
