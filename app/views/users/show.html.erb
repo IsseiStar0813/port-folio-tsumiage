@@ -32,12 +32,17 @@
         <% if @schedules %>
           <% @schedules.each do |schedule| %>
             <div class = "text-lg mb-4 flex md:text-xl">
-            <% unless schedule.achieved %>
-              <span class = "mr-4 md:mr-12"><%= schedule.start.strftime("%-H:%M") %> ~ <%= schedule.finish.strftime("%-H:%M") %></span>
-              <span class = "mr-4"><%= schedule.total_hours %>時間 <%= schedule.total_minutes %>分</span>
-              <span><%= schedule.task %></span>
-              <button class = "ml-6"><%= button_to "達成", achieve_schedule_path(schedule: schedule), method: :post %></button>
-              <% end %>
+              <% if schedule.achieved %>
+                <span class = "mr-4 md:mr-12"><%= schedule.start.strftime("%-H:%M") %> ~ <%= schedule.finish.strftime("%-H:%M") %></span>
+                <span class = "mr-4"><%= schedule.total_hours %>時間 <%= schedule.total_minutes %>分</span>
+                <span><%= schedule.task %></span>
+                <span class = "ml-4 text-red-500">○</span>
+              <% else %>
+                <span class = "mr-4 md:mr-12"><%= schedule.start.strftime("%-H:%M") %> ~ <%= schedule.finish.strftime("%-H:%M") %></span>
+                <span class = "mr-4"><%= schedule.total_hours %>時間 <%= schedule.total_minutes %>分</span>
+                <span><%= schedule.task %></span>
+                <button class = "ml-6"><%= button_to "達成", achieve_schedule_path(schedule: schedule), method: :post %></button>
+                <% end %>
             </div>
           <% end %>
         <% end %>
