@@ -15,8 +15,8 @@ class SchedulesController < ApplicationController
       flash[:green] = "予定を追加しました"
     else
       # 投稿失敗
-      flash[:red] = "入力内容に不備があります"
       redirect_to request.referrer
+      flash[:red] = "入力内容に不備があります"
     end
   end
 
